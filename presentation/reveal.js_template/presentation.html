@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Team name   Names of team members" />
+  <meta name="dcterms.date" content="2021-10-19" />
+  <title>Presentation title</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="presentation_files/reveal.js-4.1.2/dist/reset.css">
+  <link rel="stylesheet" href="presentation_files/reveal.js-4.1.2/dist/reveal.css">
+
+  <style type="text/css">
+    /* CSS from pandoc style.html() */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+            pre > code.sourceCode { white-space: pre; position: relative; }
+            pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+            pre > code.sourceCode > span:empty { height: 1.2em; }
+            .sourceCode { overflow: visible; }
+            code.sourceCode > span { color: inherit; text-decoration: inherit; }
+            div.sourceCode { margin: 1em 0; }
+            pre.sourceCode { margin: 0; }
+            @media screen {
+            div.sourceCode { overflow: auto; }
+            }
+            @media print {
+            pre > code.sourceCode { white-space: pre-wrap; }
+            pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+            }
+            pre.numberSource code
+              { counter-reset: source-line 0; }
+            pre.numberSource code > span
+              { position: relative; left: -4em; counter-increment: source-line; }
+            pre.numberSource code > span > a:first-child::before
+              { content: counter(source-line);
+                position: relative; left: -1em; text-align: right; vertical-align: baseline;
+                border: none; display: inline-block;
+                -webkit-touch-callout: none; -webkit-user-select: none;
+                -khtml-user-select: none; -moz-user-select: none;
+                -ms-user-select: none; user-select: none;
+                padding: 0 4px; width: 4em;
+                color: #aaaaaa;
+              }
+            pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+            div.sourceCode
+              {   }
+            @media screen {
+            pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+            }
+            code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+            code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+            code span.at { color: #7d9029; } /* Attribute */
+            code span.bn { color: #40a070; } /* BaseN */
+            code span.bu { } /* BuiltIn */
+            code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+            code span.ch { color: #4070a0; } /* Char */
+            code span.cn { color: #880000; } /* Constant */
+            code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+            code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+            code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+            code span.dt { color: #902000; } /* DataType */
+            code span.dv { color: #40a070; } /* DecVal */
+            code span.er { color: #ff0000; font-weight: bold; } /* Error */
+            code span.ex { } /* Extension */
+            code span.fl { color: #40a070; } /* Float */
+            code span.fu { color: #06287e; } /* Function */
+            code span.im { } /* Import */
+            code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+            code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+            code span.op { color: #666666; } /* Operator */
+            code span.ot { color: #007020; } /* Other */
+            code span.pp { color: #bc7a00; } /* Preprocessor */
+            code span.sc { color: #4070a0; } /* SpecialChar */
+            code span.ss { color: #bb6688; } /* SpecialString */
+            code span.st { color: #4070a0; } /* String */
+            code span.va { color: #19177c; } /* Variable */
+            code span.vs { color: #4070a0; } /* VerbatimString */
+            code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+              </style>
+
+  <link rel="stylesheet" href="presentation_files/reveal.js-4.1.2/dist/theme/simple.css" id="theme">
+
+
+  <style type="text/css">
+  /* some tweaks to reveal css */
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+  </style>
+
+    <script src="presentation_files/header-attrs-2.11/header-attrs.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Presentation title</h1>
+  <h1 class="subtitle"><font size='6'>Presentation subtitle (if any)</font></h1>
+  <h2 class="author"><font size='8'>Team name <br> Names of team members</font></h2>
+  <h3 class="institute"><font size='10'>University of Edinburgh</font></h2>
+  <h3 class="date"><font size = '6'>2021-10-19</font></h3>
+</section>
+
+<section id="a-statement-of-the-overall-goal-research-question" class="slide level2" data-background-image="img/confetti.jpg">
+<h2 data-background-image="img/confetti.jpg">A statement of the overall goal / research question</h2>
+</section>
+<section id="section-title" class="title-slide slide level1">
+<h1>Section title</h1>
+
+</section>
+
+<section id="hello-world" class="title-slide slide level1">
+<h1>Hello World</h1>
+<ul>
+<li><p>Click the <code>Knit</code> button to compile your presentation</p></li>
+<li><p>Make sure to commit and push all resulting files to your GitHub repo</p></li>
+</ul>
+</section>
+
+<section>
+<section id="using-reveal.js" class="title-slide slide level1">
+<h1>Using reveal.js</h1>
+<p>It’s possible to have a horizontal sliding transition as well as nest multiple slides to create a vertical stack.</p>
+<p>When presenting, you use the left/right arrows to step through the top-level (horizontal) slides. When you arrive at a vertical stack you can optionally press the up/down arrows to view the vertical slides or skip past them by pressing the right arrow.</p>
+<p>(click the down key now)</p>
+</section>
+<section id="reveal.js" class="slide level2">
+<h2>reveal.js</h2>
+<ul>
+<li><p>The presentation is created using the <code>reveal.js</code> package</p></li>
+<li><p>You can create a slide show broken up into sections by using the # and ## heading tags</p></li>
+<li><p>You can also create a new slide without a header using a horizontal rule (—-)</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>You can also add pauses between content on a slide using (“. . .”)</li>
+</ul>
+<div class="fragment">
+<p>Like this.</p>
+<p>…or using “::: fragment”</p>
+<div class="fragment">
+<p>Like this.</p>
+</div>
+</div>
+</section></section>
+<section id="layouts" class="title-slide slide level1">
+<h1>Layouts</h1>
+<p>You can use plain text</p>
+<ul>
+<li>or bullet points</li>
+</ul>
+<div>
+<div style="float: left; width: 50%;">
+or text in two columns
+</div>
+<div style="float: left; width: 50%;">
+like this
+</div>
+</div>
+<p>because you can combine HTML and Markdown syntax.</p>
+<p style="font-size: 8pt; position: absolute; bottom: -5em; width: 100%; text-align: center;">
+*You can also add footnotes
+</p>
+</section>
+
+<section id="code" class="title-slide slide level1">
+<h1>Code</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a boring regression</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(dist <span class="sc">~</span> speed, <span class="at">data =</span> cars)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(model)</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 5
+##   term        estimate std.error statistic  p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)   -17.6      6.76      -2.60 1.23e- 2
+## 2 speed           3.93     0.416      9.46 1.49e-12</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(model)</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 12
+##   r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC
+##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     0.651         0.644  15.4      89.6 1.49e-12     1  -207.  419.  425.
+## # … with 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
+</section>
+
+<section>
+<section id="plots" class="title-slide slide level1">
+<h1>Plots</h1>
+<p><img src="presentation_files/figure-revealjs/plot-iris-1.png" width="80%" /></p>
+</section>
+<section id="plot-and-text" class="slide level2">
+<h2>Plot and text</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>Some text</li>
+<li>goes here</li>
+</ul>
+</div><div class="column">
+<p><img src="presentation_files/figure-revealjs/unnamed-chunk-1-1.png" width="100%" /></p>
+</div>
+</div>
+</section>
+<section id="different-widths" class="slide level2">
+<h2>Different widths</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>Some text</li>
+<li>goes here</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img src="presentation_files/figure-revealjs/unnamed-chunk-2-1.png" width="100%" /></p>
+</div>
+</div>
+</section></section>
+<section id="tables" class="title-slide slide level1">
+<h1>Tables</h1>
+<p>If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+Sepal.Length
+</th>
+<th style="text-align:right;">
+Sepal.Width
+</th>
+<th style="text-align:right;">
+Petal.Length
+</th>
+<th style="text-align:right;">
+Petal.Width
+</th>
+<th style="text-align:left;">
+Species
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+5.1
+</td>
+<td style="text-align:right;">
+3.5
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.9
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.7
+</td>
+<td style="text-align:right;">
+3.2
+</td>
+<td style="text-align:right;">
+1.3
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.6
+</td>
+<td style="text-align:right;">
+3.1
+</td>
+<td style="text-align:right;">
+1.5
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.0
+</td>
+<td style="text-align:right;">
+3.6
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.4
+</td>
+<td style="text-align:right;">
+3.9
+</td>
+<td style="text-align:right;">
+1.7
+</td>
+<td style="text-align:right;">
+0.4
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<section id="images" class="title-slide slide level1">
+<h1>Images</h1>
+<p><img src="https://images.unsplash.com/photo-1535448033526-c0e85c9e6968?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" title="Image credit: Photo by Jörg Angeli on Unsplash." alt="Image credit: Photo by Jörg Angeli on Unsplash." width="60%" style="display: block; margin: auto;" /></p>
+<p>Or you can also include a full page image. See next slide.</p>
+</section>
+<section id="section" class="slide level2" data-background-image="https://images.unsplash.com/photo-1535448033526-c0e85c9e6968?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1650&amp;q=80">
+<h2 data-background-image="https://images.unsplash.com/photo-1535448033526-c0e85c9e6968?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1650&amp;q=80"></h2>
+</section></section>
+<section id="math-expressions" class="title-slide slide level1">
+<h1>Math Expressions</h1>
+<p>You can write LaTeX math expressions inside a pair of dollar signs ($…$), e.g. <span class="math inline">\(\alpha+\beta\)</span>. You can use the display style with double dollar signs:</p>
+<p><span class="math display">\[\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i\]</span></p>
+</section>
+
+<section id="feeling-adventurous" class="title-slide slide level1">
+<h1>Feeling adventurous?</h1>
+<p>You can learn more about the options available at the following pages:</p>
+<ul>
+<li><p><a href="https://github.com/rstudio/revealjs" class="uri">https://github.com/rstudio/revealjs</a></p></li>
+<li><p><a href="https://bookdown.org/yihui/rmarkdown/revealjs.html" class="uri">https://bookdown.org/yihui/rmarkdown/revealjs.html</a></p></li>
+<li><p><a href="http://www.jenniferbradham.org/post/reveal_js_markdown/" class="uri">http://www.jenniferbradham.org/post/reveal_js_markdown/</a></p></li>
+<li><p><a href="https://revealjs.com/" class="uri">https://revealjs.com/</a></p></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="presentation_files/reveal.js-4.1.2/dist/reveal.js"></script>
+  
+  <!-- reveal.js plugins -->
+  
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        // Implies `hash: true`
+        history: true,
+        // Vertical centering of slides
+        center: false,
+        // Transition style
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+
+
+
+        // Optional reveal.js plugins
+        plugins: [
+        ]
+      });
+
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>

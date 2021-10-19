@@ -1,0 +1,1 @@
+In this folder is two versions of the starter presentation that you can use to build your own project presentation. Once you have chosen which you wish to use as a template, please move or copy the contents into this folder.
