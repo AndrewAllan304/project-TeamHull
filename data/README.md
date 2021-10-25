@@ -1,9 +1,6 @@
 # data
 
-Place data file(s) in this folder.
-
-Then, include codebooks (variables, and their descriptions) for your data file(s)
-using the following format.
+This data set has 35 variables and 33,408 entries
 
 ## name of data file
 
