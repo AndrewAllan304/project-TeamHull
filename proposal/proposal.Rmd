@@ -15,7 +15,7 @@ test
 
 ## 1. Introduction
 
-The data we are going to be using is "Youth Risk Behavior Surveillance System (YRBSS): High School – Excluding Sexual Identity". This data has a wide range of variables and entries from 1991-2017 that monitored young peoples behaviors (violence; tobacco use; substance abuse; sexual health; dietary health; and physical health).
+The data we are going to be using is "Youth Risk Behavior Surveillance System (YRBSS): Middle School". This data has a wide range of variables and entries from 1991-2017 that monitored young peoples behaviors (violence; tobacco use; substance abuse; sexual health; dietary health; and physical health). this one specifically focuses on substance abuse levels over a 26 year period within middle school.
 
 This data was collected by the Centers for Disease Control and Prevention(CDC). As of 25/10/2021, this data was last updated on March 29th, 2019. 
 
