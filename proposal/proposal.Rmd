@@ -22,6 +22,8 @@ This data was collected by the Centers for Disease Control and Prevention(CDC). 
 The 35 variables in this data set are year, loactionabbr, LocationDesc, DataSource, Topic, Subtopic, ShortQuestionText, Greater_Risk_Question, Description, Data_Value_Symbol, Data_Value_Type, Greater_Risk_Data_Value, Greater_Risk_Data_Value_Footnote_Symbol, Greater_Risk_Data_Value_Footnote, Greater_Risk_Low_Confidence_Limit, Lesser_Risk_Question,
 Lesser_Risk_Data_Value, Lesser_Risk_Data_Value_Footnote_Symbol, Lesser_Risk_Data_Value_Footnote, Lesser_Risk_Low_Confidence_Limit, Lesser_Risk_High_Confidence_Limit, Sample_Size, Sex, Race, Grade, GeoLocation, TopicId, SubTopicID, QuestionCode, LocationId, StratID1, StratID2, StratID3 and StratificationType.
 
+The question we will be looking at is the change in common risk behaviors periodically from 1991 till 2017. 
+
 ## 2. Data
 
 
