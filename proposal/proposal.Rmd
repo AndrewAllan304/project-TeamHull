@@ -15,19 +15,20 @@ test
 
 ## 1. Introduction
 
-The data we are going to be using is "Youth Risk Behavior Surveillance System (YRBSS): Middle School". This data has a wide range of variables and entries from 1991-2017 that monitored young peoples behaviors (violence; tobacco use; substance abuse; sexual health; dietary health; and physical health). this one specifically focuses on substance abuse levels over a 26 year period within middle school.
+The data we are going to be using is "Youth Risk Behavior Surveillance System (YRBSS): Middle School". This data has a wide range of variables and entries from 1991-2017 that monitored young peoples behaviors (violence; tobacco use; substance abuse; sexual health; dietary health; and physical health). These data sets specifically focuses on substance abuse levels and dietary Health over a 26 year period within middle school.
 
 This data was collected by the Centers for Disease Control and Prevention(CDC). As of 25/10/2021, this data was last updated on March 29th, 2019. 
 
 The 35 variables in this data set are year, loactionabbr, LocationDesc, DataSource, Topic, Subtopic, ShortQuestionText, Greater_Risk_Question, Description, Data_Value_Symbol, Data_Value_Type, Greater_Risk_Data_Value, Greater_Risk_Data_Value_Footnote_Symbol, Greater_Risk_Data_Value_Footnote, Greater_Risk_Low_Confidence_Limit, Lesser_Risk_Question,
 Lesser_Risk_Data_Value, Lesser_Risk_Data_Value_Footnote_Symbol, Lesser_Risk_Data_Value_Footnote, Lesser_Risk_Low_Confidence_Limit, Lesser_Risk_High_Confidence_Limit, Sample_Size, Sex, Race, Grade, GeoLocation, TopicId, SubTopicID, QuestionCode, LocationId, StratID1, StratID2, StratID3 and StratificationType.
 
-The question we will be looking at is the change in substance abuse in middle school students across each state periodically from 1991 till 2017. 
+The question we will be looking at is the change in substance abuse and weight issues across the span of 26 years, from 1991-2017, in middle school students and what variables, such as race or sex, or grade, is more susceptible to theses issues.
 
 ## 2. Data
 
 ```{r Data-frame, message = FALSE}
-glimpse(DASH_YRBSS_Alcohol_and_Other_Drug_Use_MS_)
+glimpse(Substance_Abuse)
+glimpse(Weight_Issues)
 ```
 
 ## 3. Data analysis plan
