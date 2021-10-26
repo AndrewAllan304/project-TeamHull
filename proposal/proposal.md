@@ -1,25 +1,23 @@
 Project proposal
 ================
-Team name
+Team Hull
 
 ``` r
 library(tidyverse)
 library(broom)
 ```
 
-*For instructions on what each section should include, please see the
-[project page](https://idsed.digital/assessments/project/#proposal) on
-the course website. Remove this text when completing your proposal*.
-
 test
 
 ## 1. Introduction
 
 The data we are going to be using is “Youth Risk Behavior Surveillance
-System (YRBSS): High School – Excluding Sexual Identity”. This data has
-a wide range of variables and entries from 1991-2017 that monitored
-young peoples behaviors (violence; tobacco use; substance abuse; sexual
-health; dietary health; and physical health).
+System (YRBSS): Middle School”. This data has a wide range of variables
+and entries from 1991-2017 that monitored young peoples behaviors
+(violence; tobacco use; substance abuse; sexual health; dietary health;
+and physical health). These data sets specifically focuses on substance
+abuse levels and dietary Health over a 26 year period within middle
+school.
 
 This data was collected by the Centers for Disease Control and
 Prevention(CDC). As of 25/10/2021, this data was last updated on March
@@ -39,6 +37,42 @@ Lesser\_Risk\_High\_Confidence\_Limit, Sample\_Size, Sex, Race, Grade,
 GeoLocation, TopicId, SubTopicID, QuestionCode, LocationId, StratID1,
 StratID2, StratID3 and StratificationType.
 
+The question we will be looking at is the change in substance abuse and
+weight issues across the span of 26 years, from 1991-2017, in middle
+school students and what variables, such as race or sex, or grade, is
+more susceptible to theses issues.
+
 ## 2. Data
 
 ## 3. Data analysis plan
+
+The outcome (response, Y) and predictor (explanatory, X) variables you
+will use to answer your question. The comparison groups you will use, if
+applicable. Very preliminary exploratory data analysis, including some
+summary statistics. and visualizations, along with some explanation on
+how they help you learn more about your data. (You can add to these
+later as you work on your project.) The statistical method(s) that you
+believe will be useful in answering your question(s). (You can update
+these later as you work on your project.) What results from these
+specific statistical methods are needed to support your hypothesized
+answer?
+
+The Variables that will be used to answer the question will be mainly
+year and and subtopic to see whether there is some sort of trend with
+the way these issues develop as high schoolers complete each grade
+level. Furthermore, to see the breakdown on who is affected more, sex,
+race, and grade will be used in comparison. This will help us see if
+there are any trends, such as more people starting to abuse substances
+as the approach grade x, or if male or female high school children are
+more prone to having behavioral issues with weight and dietary health.
+
+After taking a preliminary look at the dataset, we can see that the
+instances of substance abuse and weight probably start to increase more
+sharply from 10th grade onward. 9th grade seems to be relatively tame
+with regards to these things, and each subsequent year seems to grow in
+problems. We could probably look to statistical methods such as
+calculating the mean year at which students in particular regions are
+experiencing these problems. We could also map frequency of instances of
+substance abuse or weight issues by population, in order to see whether,
+for example, certain urban/rural areas or more conservative/liberal
+states are experiencing more or less of each of these problems.

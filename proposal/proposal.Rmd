@@ -25,10 +25,7 @@ The question we will be looking at is the change in substance abuse and weight i
 
 ## 2. Data
 
-```{r Data-frame, message = FALSE}
-glimpse(Substance_Abuse)
-glimpse(Weight_Issues)
-```
+
 
 ## 3. Data analysis plan
 
