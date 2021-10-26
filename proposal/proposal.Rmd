@@ -9,7 +9,6 @@ library(tidyverse)
 library(broom)
 ```
 
-*For instructions on what each section should include, please see the [project page](https://idsed.digital/assessments/project/#proposal) on the course website. Remove this text when completing your proposal*.
 
 test
 
@@ -33,5 +32,6 @@ glimpse(Weight_Issues)
 
 ## 3. Data analysis plan
 
+The Variables that will be used to answer the question will be mainly year and and subtopic to see whether there is an increase in these issues. further to this, to see the breakdown on who is affected more sex, race and grade will be used in comparison. this help see if there is any trends, such as more people start to abuse substances as the approach grade x, or that woman are prone to having behavioral issues with weight and dietary health. 
 
 
