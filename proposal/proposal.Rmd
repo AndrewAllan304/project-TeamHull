@@ -7,7 +7,16 @@ output: github_document
 ```{r load-packages, message = FALSE}
 library(tidyverse)
 library(broom)
+library(here)
 ```
+```{r}
+Substance_Abuse <- read.csv(here::here("data/Substance Abuse.csv"))
+```
+```{r}
+Weight_Issues <- read.csv(here::here("data/Weight Issues.csv"))
+```
+
+
 
 
 test
@@ -42,4 +51,21 @@ The Variables that will be used to answer the question will be mainly year and a
 
 After taking a preliminary look at the dataset, we can see that the instances of substance abuse and weight probably start to increase more sharply from 10th grade onward. 9th grade seems to be relatively tame with regards to these things, and each subsequent year seems to grow in problems. We could probably look to statistical methods such as calculating the mean year at which students in particular regions are experiencing these problems. We could also map frequency of instances of substance abuse or weight issues by population, in order to see whether, for example, certain urban/rural areas or more conservative/liberal states are experiencing more or less of each of these problems. 
 
+##4 
+
+
+```{r}
+Substance_Abuse %>%
+  group_by(Sex) %>%
+ggplot(aes(x=Grade, fill=Sex)) +
+  geom_bar()
+```
+This graph shows the ammount of each grade that is represented on this list of Substance Abuse related events grouping by Sex. This shows a fairly even split between male and females.
+```{r}
+Weight_Issues %>%
+  group_by(Race) %>%
+  ggplot(aes(x=Grade, fill=Race)) +
+  geom_bar()
+```
+This graph shows the ammount of each grade represnted in the data for weight issues and shows there is no great disparity between races on the issue.
 
