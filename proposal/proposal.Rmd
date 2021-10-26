@@ -1,6 +1,6 @@
 ---
 title: "Project proposal"
-author: "Team name"
+author: "Team Hull"
 output: github_document
 ---
 
@@ -32,6 +32,14 @@ glimpse(Weight_Issues)
 
 ## 3. Data analysis plan
 
-The Variables that will be used to answer the question will be mainly year and and subtopic to see whether there is an increase in these issues. further to this, to see the breakdown on who is affected more sex, race and grade will be used in comparison. this help see if there is any trends, such as more people start to abuse substances as the approach grade x, or that woman are prone to having behavioral issues with weight and dietary health. 
+The outcome (response, Y) and predictor (explanatory, X) variables you will use to answer your question.
+The comparison groups you will use, if applicable.
+Very preliminary exploratory data analysis, including some summary statistics. and visualizations, along with some explanation on how they help you learn more about your data. (You can add to these later as you work on your project.)
+The statistical method(s) that you believe will be useful in answering your question(s). (You can update these later as you work on your project.)
+What results from these specific statistical methods are needed to support your hypothesized answer?
+
+The Variables that will be used to answer the question will be mainly year and and subtopic to see whether there is some sort of trend with the way these issues develop as high schoolers complete each grade level. Furthermore, to see the breakdown on who is affected more, sex, race, and grade will be used in comparison. This will help us see if there are any trends, such as more people starting to abuse substances as the approach grade x, or if male or female high school children are more prone to having behavioral issues with weight and dietary health. 
+
+After taking a preliminary look at the dataset, we can see that the instances of substance abuse and weight probably start to increase more sharply from 10th grade onward. 9th grade seems to be relatively tame with regards to these things, and each subsequent year seems to grow in problems. We could probably look to statistical methods such as calculating the mean year at which students in particular regions are experiencing these problems. We could also map frequency of instances of substance abuse or weight issues by population, in order to see whether, for example, certain urban/rural areas or more conservative/liberal states are experiencing more or less of each of these problems. 
 
 
