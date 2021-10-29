@@ -1,7 +1,7 @@
 ---
 name: Data dictionary repeated in proposal
 about: Don't repeat data dictionary in proposal
-title: Don't repeat data dictionary in proposal
+title: (Data pres, -1 mark) Don't repeat data dictionary in proposal
 labels: ''
 assignees: ''
 
