@@ -1,7 +1,7 @@
 ---
 name: Theme
 about: Concentrate your exploration around a theme
-title: Concentrate your exploration around a theme
+title: (Proposal, -0 marks) Concentrate your exploration around a theme
 labels: ''
 assignees: ''
 
