@@ -14,10 +14,13 @@ You can do this in one of two ways: on GitHub by clicking on Close issue or via 
 If you would like to resubmit your proposal for re-assessment (this is optional), comment on this issue letting me know when you're done with your updates. Deadline is Friday, 5 November, 16:00 UK time. If you submit a re-proposal, your final score for the proposal will be the average of two scores you receive (first and second submission).
 
 
-|           | Available | Earned |
-|-----------|-----------|--------|
-| Data      |      3    |        |
-| Proposal  |      5    |        |
-| Workflow  |      1    |        |
-| Teamwork  |      1    |        |
-| Total     |     10    |        |
+|                   | Earned | Available |
+|-------------------|--------|-----------|
+| Choice of dataset |        |      2    |
+| Data presentation |        |      4    |
+| Proposal/plan     |        |      4    |
+| Total             |        |     10    |
+
+Additional comments (delete if none):
+
+- 
