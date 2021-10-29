@@ -1,7 +1,7 @@
 ---
 name: Preliminary exploratory analysis missing
 about: Preliminary exploratory analysis missing
-title: Preliminary exploratory analysis missing
+title: (Proposal, -1 mark) Preliminary exploratory analysis missing
 labels: ''
 assignees: ''
 
