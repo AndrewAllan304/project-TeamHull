@@ -1,7 +1,7 @@
 ---
 name: Hypothesised results missing
 about: Hypothesised results missing
-title: Hypothesised results missing
+title: (Proposal, -1 mark) Hypothesised results missing
 labels: ''
 assignees: ''
 
