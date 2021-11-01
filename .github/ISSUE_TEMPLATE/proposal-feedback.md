@@ -11,7 +11,7 @@ Dear @ team : Below is the score breakdown for your proposal. Details of things 
 
 You can do this in one of two ways: on GitHub by clicking on Close issue or via a commit that directly addresses the issue. We’ll practice the second one. If you preface your commits with “Fixes”, “Fixed”, “Fix”, “Closes”, “Closed”, or “Close”, the issue will be closed when you push the changes to your repo. For example, suppose you want to close issue #2 which suggested that you add a new line to the README, your commit message can say something like `Add a new line to the README, closes #2`.
 
-If you would like to resubmit your proposal for re-assessment (this is optional), comment on this issue letting me know when you're done with your updates. Deadline is Friday, 5 November, 16:00 UK time. If you submit a re-proposal, your final score for the proposal will be the average of two scores you receive (first and second submission).
+If you would like to resubmit your proposal for re-assessment (this is optional), comment on this issue letting me know when you're done with your updates. Deadline is Friday, 12 November, 16:00 UK time. If you submit a re-proposal, your final score for the proposal will be the higher of two scores you receive.
 
 
 |                   | Earned | Available |
@@ -19,8 +19,9 @@ If you would like to resubmit your proposal for re-assessment (this is optional)
 | Choice of dataset |        |      2    |
 | Data presentation |        |      4    |
 | Proposal/plan     |        |      4    |
+| Other (see below) |        |    -10    |
 | Total             |        |     10    |
 
 Additional comments (delete if none):
 
-- 
+-
