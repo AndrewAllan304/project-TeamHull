@@ -53,20 +53,12 @@ After taking a preliminary look at the dataset, we can see that the instances of
 
 ##4 
 
-```{r}
-Substance_Abuse %>%
-  group_by(Sex, Grade) %>%
-  summarise(n())
-
-
-```
-
 
 ```{r}
 Substance_Abuse %>%
   group_by(Sex) %>%
-  ggplot(aes(x=Grade, fill=Sex)) +
-  geom_bar(stat="count")
+ggplot(aes(x=Grade, fill=Sex)) +
+  geom_bar()
 ```
 This graph shows the ammount of each grade that is represented on this list of Substance Abuse related events grouping by Sex. This shows a fairly even split between male and females.
 ```{r}
