@@ -1,7 +1,7 @@
 ---
-title: "Presentation title"
-subtitle: <font size='6'>Presentation subtitle (if any)</font>
-author: <font size='8'>Team name <br> Names of team members</font>
+title: "Youth Risk Behavior"
+subtitle: <font size='6'>Substance Abuse & Weight issues</font>
+author: <font size='8'>Team Hull <br> Names of team members</font>
 institute: <font size='10'>University of Edinburgh</font>
 date: <font size = '6'>`r Sys.Date()`</font>
 output:
@@ -29,7 +29,7 @@ substance_abuse <- read_csv("/cloud/project/data/Substance Abuse.csv")
 weight_issues <- read_csv("/cloud/project/data/Weight Issues.csv")
 ```
 
-## A statement of the overall goal / research question {data-background-image="img/confetti.jpg"}
+## The goal of this presentation is to show how {data-background-image="img/confetti.jpg"}
 
 # Section title
 
