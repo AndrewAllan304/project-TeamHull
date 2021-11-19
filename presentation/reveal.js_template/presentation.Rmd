@@ -122,12 +122,11 @@ ggplot(data = iris_modified, mapping = aes(x = Sepal.Width, y = Sepal.Length, co
 ::::
 
 :::: column
-```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE}
+```{r warning=FALSE,  echo=FALSE}
 # see how I changed out.width and fig.width from defaults
 # to make the figure bigger
-ggplot(penguins, aes(x = bill_length_mm, y = species, color = species)) +
-  geom_boxplot() +
-  theme_minimal()
+ggplot(weight_issues, aes(x = Grade, y = Sex, color = "YEAR")) +
+  geom_line()
 ```
 ::::
 :::
