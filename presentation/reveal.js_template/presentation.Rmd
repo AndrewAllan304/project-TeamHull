@@ -29,7 +29,7 @@ substance_abuse <- read_csv("/cloud/project/data/Substance Abuse.csv")
 weight_issues <- read_csv("/cloud/project/data/Weight Issues.csv")
 ```
 
-## Wagwan. The goal of this presentation is to discover whether risky behaviour may appear more or less frequently among different categorical variables such as sex, geography, etc. {data-background-image="img/confetti.jpg"}
+## Wagwan. The goal of this presentation is to discover whether risky behaviour may appear more or less frequently among different categorical variables such as sex, geography, etc. 
 
 # Section title
 
