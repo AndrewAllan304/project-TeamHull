@@ -204,8 +204,9 @@ like this
 </p>
 </section>
 
-<section id="code" class="title-slide slide level1">
-<h1>Code</h1>
+<section id="summarise-important-data" class="title-slide slide level1">
+<h1>Summarise Important Data</h1>
+<p>Start off by summarizing the important variables needed for both data sets Weight and Substance Abuse.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarizing</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Weight_Issues <span class="sc">%&gt;%</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(YEAR, LocationDesc, Sex, Race, Grade) <span class="sc">%&gt;%</span></span>
@@ -226,9 +227,10 @@ like this
 ##  9  1995 Chicago, IL  Female Black or African American        6th       2
 ## 10  1995 Chicago, IL  Female Black or African American        7th       2
 ## # … with 20,246 more rows</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Substance_Abuse <span class="sc">%&gt;%</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(YEAR, LocationDesc, Sex, Race, Grade) <span class="sc">%&gt;%</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarizing</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>Substance_Abuse <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(YEAR, LocationDesc, Sex, Race, Grade) <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">n</span>())</span></code></pre></div>
 <pre><code>## `summarise()` has grouped output by &#39;YEAR&#39;, &#39;LocationDesc&#39;, &#39;Sex&#39;, &#39;Race&#39;. You can override using the `.groups` argument.</code></pre>
 <pre><code>## # A tibble: 19,104 × 6
 ## # Groups:   YEAR, LocationDesc, Sex, Race [4,776]
