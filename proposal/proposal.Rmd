@@ -66,7 +66,6 @@ Substance_Abuse %>%
   group_by(Sex, Grade) %>%
   summarise(n())
 
-
 ```
 
 >>>>>>> ff18bb5d3a2e579b6d296b468d25a294102f14c3
