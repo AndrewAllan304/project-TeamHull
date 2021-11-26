@@ -68,15 +68,13 @@ Substance_Abuse %>%
 
 ```
 
->>>>>>> ff18bb5d3a2e579b6d296b468d25a294102f14c3
-
 ```{r}
 Substance_Abuse %>%
   group_by(Sex) %>%
 ggplot(aes(x=Grade, fill=Sex)) +
   geom_bar()
 ```
-This graph shows the ammount of each grade that is represented on this list of Substance Abuse related events grouping by Sex. This shows a fairly even split between male and females.
+This graph shows the amount of each grade that is represented on this list of Substance Abuse related events grouping by Sex. This shows a fairly even split between male and females.
 This graph shows the amount of each grade that is represented on this list of Substance Abuse related events grouping by Sex. This shows a fairly even split between male and females.
 ```{r}
 Weight_Issues %>%
@@ -86,5 +84,5 @@ Weight_Issues %>%
   ggplot(aes(x=Greater_Risk_Question, fill=Sex)) +
   geom_bar()
 ```
-This graph shows the ammount of each grade represnted in the data for weight issues and shows there is no great disparity between races on the issue.
+This graph shows the amount of each grade represented in the data for weight issues and shows there is no great disparity between races on the issue.
 
