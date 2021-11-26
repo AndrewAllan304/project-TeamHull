@@ -62,9 +62,8 @@ Substance_Abuse %>%
 ```
 
 ```{r}
-Substance_Abuse %>%
-  group_by(Sex, Grade) %>%
-  summarise(n())
+Substance_Abuse_Edited <- Substance_Abuse %>%
+  mutate(Pop_at_Grisk = Greater_Risk_Data_Value + Sample_Size)
 
 
 ```
