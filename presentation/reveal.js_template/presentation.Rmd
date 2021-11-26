@@ -25,8 +25,8 @@ knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618,
 ```
 
 ```{r load-data, include=FALSE}
-substance_abuse <- read_csv("/cloud/project/data/Substance Abuse.csv")
-weight_issues <- read_csv("/cloud/project/data/Weight Issues.csv")
+Substance_Abuse <- read.csv(here::here("data/Substance Abuse.csv"))
+Weight_Issues <- read.csv(here::here("data/Weight Issues.csv"))
 ```
 
 ## Wagwan. The goal of this presentation is to discover whether risky behaviour may appear more or less frequently among different categorical variables such as sex, geography, etc. 
@@ -86,13 +86,19 @@ because you can combine HTML and Markdown syntax.
 
 <p style="font-size: 8pt; position: absolute; bottom: -5em; width: 100%; text-align: center;">*You can also add footnotes</p>
 
-# Code
+# Summarise Important Data
 
-```{r boring-regression}
-# a boring regression
-model <- lm(dist ~ speed, data = cars)
-tidy(model)
-glance(model)
+Start off by summarizing the important variables needed for both data sets Weight and Substance Abuse. 
+
+```{r, echo = TRUE}
+# Summarizing
+Weight_Issues %>%
+  group_by(YEAR, LocationDesc, Sex, Race, Grade) %>%
+  summarise(n())
+# Summarizing
+Substance_Abuse %>%
+  group_by(YEAR, LocationDesc, Sex, Race, Grade) %>%
+  summarise(n())
 ```
 
 # Plots
@@ -125,8 +131,6 @@ ggplot(data = iris_modified, mapping = aes(x = Sepal.Width, y = Sepal.Length, co
 ```{r warning=FALSE,  echo=FALSE}
 # see how I changed out.width and fig.width from defaults
 # to make the figure bigger
-ggplot(weight_issues, aes(x = Grade, y = Sex, color = "YEAR")) +
-  geom_line()
 ```
 ::::
 :::
@@ -143,9 +147,6 @@ ggplot(weight_issues, aes(x = Grade, y = Sex, color = "YEAR")) +
 ```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE}
 # see how I changed out.width and fig.width from defaults
 # to make the figure bigger
-ggplot(penguins, aes(x = bill_length_mm, y = species, color = species)) +
-  geom_boxplot() +
-  theme_minimal()
 ```
 ::::
 :::
