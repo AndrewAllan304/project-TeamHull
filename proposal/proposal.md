@@ -216,7 +216,7 @@ ggplot(aes(x=Grade, y = (Greater_Risk_Data_Value/100), fill=Sex)) +
 
     ## Warning: Removed 22131 rows containing missing values (geom_point).
 
-![](proposal_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](proposal_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 This graph shows the amount of each grade that is represented on this
 list of Substance Abuse related events grouping by Sex. This shows a
@@ -228,7 +228,7 @@ Weight_Issues %>%
   ggplot(aes(x=Grade, fill=Race)) 
 ```
 
-![](proposal_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](proposal_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ``` r
 Weight_Issues %>%
@@ -237,7 +237,7 @@ Weight_Issues %>%
   geom_bar()
 ```
 
-![](proposal_files/figure-gfm/unnamed-chunk-9-2.png)<!-- -->
+![](proposal_files/figure-gfm/unnamed-chunk-7-2.png)<!-- -->
 
 This graph shows the amount of each grade represented in the data for
 weight issues and shows there is no great disparity between races on the
