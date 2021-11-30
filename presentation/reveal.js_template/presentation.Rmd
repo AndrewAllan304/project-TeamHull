@@ -91,14 +91,7 @@ because you can combine HTML and Markdown syntax.
 Start off by summarizing the important variables needed for both data sets Weight and Substance Abuse. 
 
 ```{r, echo = TRUE}
-# Summarizing
-Weight_Issues %>%
-  group_by(YEAR, LocationDesc, Sex, Race, Grade) %>%
-  summarise(n())
-# Summarizing
-Substance_Abuse %>%
-  group_by(YEAR, LocationDesc, Sex, Race, Grade) %>%
-  summarise(n())
+
 ```
 
 # Plots
