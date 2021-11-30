@@ -86,8 +86,9 @@ ggplot(aes(x=Grade, y = (Greater_Risk_Data_Value/100), fill=Sex)) +
 This graph shows the amount of each grade that is represented on this list of Substance Abuse related events grouping by Sex. This shows a fairly even split between male and females.
 ```{r}
 Weight_Issues %>%
-  group_by(Race) %>%
-  ggplot(aes(x=Grade, fill=Race)) 
+  ggplot(aes(x=Greater_Risk_Low_Confidence_Limit, y = LocationId))+
+  geom_point(aes(colour = Sex))+
+  facet_wrap(~Grade)
 Weight_Issues %>%
   group_by(Sex) %>%
   ggplot(aes(x=Greater_Risk_Question, fill=Sex)) +
