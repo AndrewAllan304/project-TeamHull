@@ -77,27 +77,48 @@ Weight_Issues_Edited <- Weight_Issues %>%
 
 
 ```{r}
+  ggplot(Substance_Abuse_Edited ,aes(x=Grade, y = (Greater_Risk_Data_Value/100))) +
+  geom_jitter(aes(colour = Sex))+
+  labs(title = "Greater risk (%) by grade",
+       x = "Grade",
+       Y = "Greater Risk percentage (%)")
+```
+
+```{r}
 Substance_Abuse_Edited %>%
   group_by(Sex) %>%
-ggplot(aes(x=Grade, y = (Greater_Risk_Data_Value/100), fill=Sex, colour = Sex)) +
+
+ggplot(aes(x=Grade, y = Pop_at_Grisk,colour = Sex)) +
+
+ggplot(aes(x=Grade, y = Pop_at_Grisk, fill=Sex, colour = Sex)) +
+
   geom_jitter() +
-  geom_smooth(method = "lm")
+  geom_smooth(method = "lm", se = FALSE)
 ```
 
 This graph shows the amount of each grade that is represented on this list of Substance Abuse related events grouping by Sex. This shows a fairly even split between male and females.
 ```{r}
-Weight_Issues_Edited %>%
-  group_by(Race) %>%
-  ggplot(aes(y=Pop_at_Grisk, x=Race, colour=Race)) +
-  geom_line() +
-  theme(axis.text.x = element_blank())
+Weight_Issues %>%
+  ggplot(aes(x=Greater_Risk_Low_Confidence_Limit, y = LocationDesc))+
+  geom_point(aes(colour = Sex))+
+  facet_wrap(~Grade)+
+  labs(title = "Location V Grisk Low Confidence",
+       x = "Grisk low Confidence",
+       y = "Location")
 ```
+
+
 ```{r}
-Weight_Issues_Edited %>%
+Weight_Issues %>%
   group_by(Sex) %>%
-  ggplot(aes(x=Pop_at_Grisk, fill=Sex)) +
+  ggplot(aes(x=Greater_Risk_Question, fill=Sex)) +
   geom_bar()
 ```
 
 This graph shows the amount of each grade represented in the data for weight issues and shows there is no great disparity between races on the issue.
+
+```{r}
+Weight_Issues_Edited %>%
+  ggplot(aes(x = , y = ))
+```
 

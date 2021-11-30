@@ -208,15 +208,32 @@ Weight_Issues_Edited <- Weight_Issues %>%
 ```
 
 ``` r
-Substance_Abuse_Edited %>%
-  group_by(Sex) %>%
-ggplot(aes(x=Grade, y = (Greater_Risk_Data_Value/100), fill=Sex)) +
-  geom_jitter()
+  ggplot(Substance_Abuse_Edited ,aes(x=Grade, y = (Greater_Risk_Data_Value/100))) +
+  geom_jitter(aes(colour = Sex))+
+  labs(title = "Greater risk (%) by grade",
+       x = "Grade",
+       Y = "Greater Risk percentage (%)")
 ```
 
     ## Warning: Removed 22131 rows containing missing values (geom_point).
 
 ![](proposal_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
+``` r
+Substance_Abuse_Edited %>%
+  group_by(Sex) %>%
+ggplot(aes(x=Grade, y = Pop_at_Grisk,colour = Sex)) +
+  geom_jitter() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+    ## `geom_smooth()` using formula 'y ~ x'
+
+    ## Warning: Removed 22131 rows containing non-finite values (stat_smooth).
+
+    ## Warning: Removed 22131 rows containing missing values (geom_point).
+
+![](proposal_files/figure-gfm/unnamed-chunk-6-2.png)<!-- -->
 
 This graph shows the amount of each grade that is represented on this
 list of Substance Abuse related events grouping by Sex. This shows a
@@ -224,9 +241,15 @@ fairly even split between male and females.
 
 ``` r
 Weight_Issues %>%
-  group_by(Race) %>%
-  ggplot(aes(x=Grade, fill=Race)) 
+  ggplot(aes(x=Greater_Risk_Low_Confidence_Limit, y = LocationDesc))+
+  geom_point(aes(colour = Sex))+
+  facet_wrap(~Grade)+
+  labs(title = "Location V Grisk Low Confidence",
+       x = "Grisk low Confidence",
+       y = "Location")
 ```
+
+    ## Warning: Removed 26846 rows containing missing values (geom_point).
 
 ![](proposal_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
