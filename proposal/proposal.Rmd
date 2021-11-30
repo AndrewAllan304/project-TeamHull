@@ -71,11 +71,6 @@ Weight_Issues_Edited <- Weight_Issues %>%
   group_by(YEAR, LocationDesc, Sample_Size, Pop_at_Grisk, Sex, Race, Grade, Greater_Risk_Data_Value, Greater_Risk_High_Confidence_Limit, Greater_Risk_Low_Confidence_Limit, Lesser_Risk_High_Confidence_Limit, Lesser_Risk_Low_Confidence_Limit, GeoLocation, QuestionCode, LocationId)
 ```
 
-
-
-
-
-
 ```{r}
   ggplot(Substance_Abuse_Edited ,aes(x=Grade, y = (Greater_Risk_Data_Value/100))) +
   geom_jitter(aes(colour = Sex))+
@@ -87,11 +82,7 @@ Weight_Issues_Edited <- Weight_Issues %>%
 ```{r}
 Substance_Abuse_Edited %>%
   group_by(Sex) %>%
-
-ggplot(aes(x=Grade, y = Pop_at_Grisk,colour = Sex)) +
-
-ggplot(aes(x=Grade, y = Pop_at_Grisk, fill=Sex, colour = Sex)) +
-
+  ggplot(aes(x=Grade, y = Pop_at_Grisk, fill=Sex, colour = Sex)) +
   geom_jitter() +
   geom_smooth(method = "lm", se = FALSE)
 ```
