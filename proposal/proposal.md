@@ -268,7 +268,8 @@ issue.
 
 ``` r
 Weight_Issues_Edited %>%
-  ggplot(aes(x = , y = ))
+  group_by(LocationDesc) %>%
+  ggplot(aes(x = LocationDesc , y = ))
 ```
 
 ![](proposal_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
