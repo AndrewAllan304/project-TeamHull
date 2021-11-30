@@ -119,6 +119,7 @@ This graph shows the amount of each grade represented in the data for weight iss
 
 ```{r}
 Weight_Issues_Edited %>%
-  ggplot(aes(x = , y = ))
+  group_by(LocationDesc) %>%
+  ggplot(aes(x = LocationDesc , y = ))
 ```
 
