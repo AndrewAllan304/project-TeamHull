@@ -87,11 +87,11 @@ Weight_Issues_Edited <- Weight_Issues %>%
 ```{r}
 Substance_Abuse_Edited %>%
   group_by(Sex) %>%
-<<<<<<< HEAD
+
 ggplot(aes(x=Grade, y = Pop_at_Grisk,colour = Sex)) +
-=======
+
 ggplot(aes(x=Grade, y = Pop_at_Grisk, fill=Sex, colour = Sex)) +
->>>>>>> e57686599d7f1baedc81f030bed77ce7f38a18a3
+
   geom_jitter() +
   geom_smooth(method = "lm", se = FALSE)
 ```
