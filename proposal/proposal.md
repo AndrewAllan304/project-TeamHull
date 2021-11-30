@@ -221,6 +221,23 @@ Weight_Issues_Edited <- Weight_Issues %>%
 
 ``` r
 Substance_Abuse_Edited %>%
+  filter(
+    Sex != "Total",
+    Greater_Risk_Question == "Drank alcohol for the first time before age 11 years"
+  ) %>%
+  drop_na(Greater_Risk_Data_Value) %>%
+  group_by(Sex, YEAR) %>%
+  summarise(Percentage_Greater_Risk = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
+  ggplot(aes(x = YEAR, y = Percentage_Greater_Risk, fill = Sex)) +
+  geom_bar(stat = "identity", position = "dodge")
+```
+
+    ## `summarise()` has grouped output by 'Sex'. You can override using the `.groups` argument.
+
+![](proposal_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+
+``` r
+Substance_Abuse_Edited %>%
   group_by(Sex) %>%
   ggplot(aes(x=Grade, y = Pop_at_Grisk, fill=Sex, colour = Sex)) +
   geom_jitter() +
@@ -233,7 +250,7 @@ Substance_Abuse_Edited %>%
 
     ## Warning: Removed 22131 rows containing missing values (geom_point).
 
-![](proposal_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](proposal_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 This graph shows the amount of each grade that is represented on this
 list of Substance Abuse related events grouping by Sex. This shows a
@@ -251,7 +268,7 @@ Weight_Issues %>%
 
     ## Warning: Removed 26846 rows containing missing values (geom_point).
 
-![](proposal_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](proposal_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 ``` r
 Weight_Issues %>%
@@ -260,7 +277,7 @@ Weight_Issues %>%
   geom_bar()
 ```
 
-![](proposal_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](proposal_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 This graph shows the amount of each grade represented in the data for
 weight issues and shows there is no great disparity between races on the
@@ -272,4 +289,4 @@ Weight_Issues_Edited %>%
   ggplot(aes(x = LocationDesc , y = ))
 ```
 
-![](proposal_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](proposal_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->

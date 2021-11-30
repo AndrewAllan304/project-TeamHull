@@ -1,7 +1,7 @@
 ---
 title: "Youth Risk Behavior"
 subtitle: <font size='6'>Substance Abuse & Weight issues</font>
-author: <font size='8'>Team Hull <br> Names of team members</font>
+author: <font size='8'>Team Hull <br> Philip Wieczorek, Andrew Allan, Joshua Brown, Fengshou Miao</font>
 institute: <font size='10'>University of Edinburgh</font>
 date: <font size = '6'>`r Sys.Date()`</font>
 output:
@@ -27,10 +27,18 @@ knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618,
 ```{r load-data, include=FALSE}
 Substance_Abuse <- read.csv(here::here("data/Substance Abuse.csv"))
 Weight_Issues <- read.csv(here::here("data/Weight Issues.csv"))
+```
 
-Substance_Abuse_Edited <- read.csv(here::here("data/Substance Abuse Edited.csv"))
-Weight_Issues_Edited <- read.csv(here::here("data/Weight Issues Edited.csv"))
+```{r}
+Substance_Abuse_Edited <- Substance_Abuse %>%
+  mutate(Pop_at_Grisk = (Greater_Risk_Data_Value/100) * Sample_Size)%>%
+  group_by(YEAR, LocationDesc, Sample_Size, Pop_at_Grisk, Sex, Race, Grade, Greater_Risk_Data_Value,Greater_Risk_High_Confidence_Limit, Greater_Risk_Low_Confidence_Limit, Lesser_Risk_Low_Confidence_Limit, Lesser_Risk_High_Confidence_Limit, GeoLocation, QuestionCode, LocationId)
+```
 
+```{r}
+Weight_Issues_Edited <- Weight_Issues %>%
+  mutate(Pop_at_Grisk = (Greater_Risk_Data_Value/100) * Sample_Size)%>%
+  group_by(YEAR, LocationDesc, Sample_Size, Pop_at_Grisk, Sex, Race, Grade, Greater_Risk_Data_Value, Greater_Risk_High_Confidence_Limit, Greater_Risk_Low_Confidence_Limit, Lesser_Risk_High_Confidence_Limit, Lesser_Risk_Low_Confidence_Limit, GeoLocation, QuestionCode, LocationId)
 ```
 
 ## Our goals with this project were to...
@@ -42,19 +50,19 @@ Weight_Issues_Edited <- read.csv(here::here("data/Weight Issues Edited.csv"))
 - Map important or interesting trends that we found along the way
 
 
-# Our Dataset
+# Our Dataset: Substance Abuse
 
-```{r}
+```{r Substance_Abuse_Edited Glimpse}
 glimpse(Substance_Abuse_Edited)
-glimpse(Weight_Issues_Edited)
 
 ```
 
-# Hello World
+# Our Dataset: Weight Issues
 
-- Click the `Knit` button to compile your presentation
+```{r Weight_Issues_Glimpse}
+glimpse(Weight_Issues_Edited)
 
-- Make sure to commit and push all resulting files to your GitHub repo
+```
 
 # Using reveal.js
 
