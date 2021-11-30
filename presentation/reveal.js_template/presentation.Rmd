@@ -29,7 +29,13 @@ Substance_Abuse <- read.csv(here::here("data/Substance Abuse.csv"))
 Weight_Issues <- read.csv(here::here("data/Weight Issues.csv"))
 ```
 
-## Wagwan. The goal of this presentation is to discover whether risky behaviour may appear more or less frequently among different categorical variables such as sex, geography, etc. 
+## Our goals with this project are to...
+
+- Discover whether risky behavior such as "substance abuse" and "weight issues" may appear more or less frequently among different categorical variables such as sex, race, etc. 
+
+- Model how risky behavior trends throughout different grades
+
+
 
 # Section title
 
@@ -111,9 +117,6 @@ iris_modified <- iris %>%
 ```
 
 ```{r plot-iris, echo = FALSE}
-# Code hidden with echo = FALSE
-# Uses modified iris dataset from previous chunk
-# Play around with height and width until you're happy with the look
 ggplot(data = iris_modified, mapping = aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
   geom_point() + 
   theme_minimal() # theme options: https://ggplot2.tidyverse.org/reference/ggtheme.html
