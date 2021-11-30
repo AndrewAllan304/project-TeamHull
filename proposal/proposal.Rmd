@@ -82,10 +82,12 @@ Weight_Issues_Edited <- Weight_Issues %>%
   labs(title = "Greater risk (%) by grade",
        x = "Grade",
        Y = "Greater Risk percentage (%)")
+```
+
+```{r}
 Substance_Abuse_Edited %>%
   group_by(Sex) %>%
 ggplot(aes(x=Grade, y = Pop_at_Grisk, fill=Sex, colour = Sex)) +
-  geom_jitter() 
   geom_jitter() +
   geom_smooth(method = "lm", se = FALSE)
 ```
@@ -99,6 +101,10 @@ Weight_Issues %>%
   labs(title = "Location V Grisk Low Confidence",
        x = "Grisk low Confidence",
        y = "Location")
+```
+
+
+```{r}
 Weight_Issues %>%
   group_by(Sex) %>%
   ggplot(aes(x=Greater_Risk_Question, fill=Sex)) +
