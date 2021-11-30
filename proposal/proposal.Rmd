@@ -81,6 +81,20 @@ Weight_Issues_Edited <- Weight_Issues %>%
 
 ```{r}
 Substance_Abuse_Edited %>%
+  filter(
+    Sex != "Total",
+    Greater_Risk_Question == "Drank alcohol for the first time before age 11 years"
+  ) %>%
+  drop_na(Greater_Risk_Data_Value) %>%
+  group_by(Sex, YEAR) %>%
+  summarise(Percentage_Greater_Risk = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
+  ggplot(aes(x = YEAR, y = Percentage_Greater_Risk, fill = Sex)) +
+  geom_bar(stat = "identity", position = "dodge")
+
+```
+
+```{r}
+Substance_Abuse_Edited %>%
   group_by(Sex) %>%
   ggplot(aes(x=Grade, y = Pop_at_Grisk, fill=Sex, colour = Sex)) +
   geom_jitter() +
