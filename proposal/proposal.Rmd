@@ -127,6 +127,8 @@ Weight_Issues_Edited %>%
   group_by(LocationDesc) %>%
   ggplot(aes(x = LocationDesc , y = Pop_at_Grisk, colour = LocationDesc)) +
   geom_line() +
-  theme(axis.text.x = element_text(angle = 90, size = 5), legend.position = "None", axis.title.x = element_text("Location"), axis.title.y = element_text("Population at Greater Risk"))
+  theme(axis.text.x = element_text(angle = 90, size = 5), legend.position = "None") +
+  xlab("Location") +
+  ylab("Population at Greater Risk")
 ```
 
