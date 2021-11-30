@@ -113,3 +113,8 @@ Weight_Issues %>%
 
 This graph shows the amount of each grade represented in the data for weight issues and shows there is no great disparity between races on the issue.
 
+```{r}
+Weight_Issues_Edited %>%
+  ggplot(aes(x = , y = ))
+```
+
