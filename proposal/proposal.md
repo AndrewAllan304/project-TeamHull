@@ -286,7 +286,13 @@ issue.
 ``` r
 Weight_Issues_Edited %>%
   group_by(LocationDesc) %>%
-  ggplot(aes(x = LocationDesc , y = ))
+  ggplot(aes(x = LocationDesc , y = Greater_Risk_Data_Value, fill = LocationDesc)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  theme(axis.text.x = element_text(angle = 90, size = 5), legend.position = "None") +
+  xlab("Location") +
+  ylab("Percentage of the Population at Greater Risk")
 ```
+
+    ## Warning: Removed 26846 rows containing missing values (geom_bar).
 
 ![](proposal_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
