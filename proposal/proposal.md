@@ -258,6 +258,54 @@ fairly even split between male and females.
 
 ``` r
 Weight_Issues %>%
+  filter(
+    Greater_Risk_Question == "Described themselves as slightly or very overweight"
+  ) %>%
+  drop_na(Greater_Risk_Data_Value) %>%
+  group_by(LocationDesc) %>%
+  summarise(Overweight_Misconception = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
+  ggplot(aes(x = reorder(LocationDesc, Overweight_Misconception), y = Overweight_Misconception)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  xlab("Location") +
+  ylab("Percentage of teenagers who have a misconception of overweight")
+```
+
+![](proposal_files/figure-gfm/unnamed-chunk-9-1.png)<!-- --> This graph
+shows the percentage of teenagers having a overweight misconception
+between those who suffered from weight loss. Compared to another type of
+greater risk “Were not trying to lose weight,” this type of risk seems
+more likely to be psychological or spiritual problem, which are usually
+closely related to the environment - for example, teenagers’ attention
+and anxiety about appearance.
+
+We can not deny that the environment will have an impact on Teenagers’
+cognition. Therefore, through this graph, we can see the severity of
+this problem in different locations.
+
+``` r
+Weight_Issues %>%
+  filter(
+    Greater_Risk_Question == "Described themselves as slightly or very overweight",
+    Sex != "Total"
+  ) %>%
+  drop_na(Greater_Risk_Data_Value) %>%
+  group_by(Sex, YEAR) %>%
+  summarise(Overweight_Misconception = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
+  ggplot(aes(x = YEAR, y = Overweight_Misconception, fill = Sex)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  xlab("Sex") +
+  ylab("Percentage")
+```
+
+    ## `summarise()` has grouped output by 'Sex'. You can override using the `.groups` argument.
+
+![](proposal_files/figure-gfm/unnamed-chunk-10-1.png)<!-- --> What we
+can see from this chart is that for a long time, there is no obvious
+sign of easing this problem, and females are more vulnerable.
+
+``` r
+Weight_Issues %>%
   ggplot(aes(x=Greater_Risk_Low_Confidence_Limit, y = LocationDesc))+
   geom_point(aes(colour = Sex))+
   facet_wrap(~Grade)+
@@ -268,7 +316,7 @@ Weight_Issues %>%
 
     ## Warning: Removed 26846 rows containing missing values (geom_point).
 
-![](proposal_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](proposal_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
 ``` r
 Weight_Issues %>%
@@ -277,7 +325,7 @@ Weight_Issues %>%
   geom_bar()
 ```
 
-![](proposal_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](proposal_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
 This graph shows the amount of each grade represented in the data for
 weight issues and shows there is no great disparity between races on the
@@ -286,13 +334,13 @@ issue.
 ``` r
 Weight_Issues_Edited %>%
   group_by(LocationDesc) %>%
-  ggplot(aes(x = LocationDesc , y = Greater_Risk_Data_Value, fill = LocationDesc)) +
+  drop_na(Greater_Risk_Data_Value) %>%
+  summarise(bingo = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
+  ggplot(aes(x = LocationDesc , y = bingo, fill = LocationDesc)) +
   geom_bar(stat = "identity", position = "dodge") +
-  theme(axis.text.x = element_text(angle = 90, size = 5), legend.position = "None") +
-  xlab("Location") +
-  ylab("Percentage of the Population at Greater Risk")
+theme(axis.text.x = element_text(angle = 90, size = 5), legend.position = "None") +
+xlab("Location") +
+ylab("Percentage of the Population at Greater Risk")
 ```
 
-    ## Warning: Removed 26846 rows containing missing values (geom_bar).
-
-![](proposal_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](proposal_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->

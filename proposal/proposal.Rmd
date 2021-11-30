@@ -102,6 +102,42 @@ Substance_Abuse_Edited %>%
 ```
 
 This graph shows the amount of each grade that is represented on this list of Substance Abuse related events grouping by Sex. This shows a fairly even split between male and females.
+
+```{r}
+Weight_Issues %>%
+  filter(
+    Greater_Risk_Question == "Described themselves as slightly or very overweight"
+  ) %>%
+  drop_na(Greater_Risk_Data_Value) %>%
+  group_by(LocationDesc) %>%
+  summarise(Overweight_Misconception = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
+  ggplot(aes(x = reorder(LocationDesc, Overweight_Misconception), y = Overweight_Misconception)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  xlab("Location") +
+  ylab("Percentage of teenagers who have a misconception of overweight")
+```
+This graph shows the percentage of teenagers having a overweight misconception between those who suffered from weight loss. Compared to another type of greater risk "Were not trying to lose weight," this type of risk seems more likely to be psychological or spiritual problem, which are usually closely related to the environment - for example, teenagers' attention and anxiety about appearance.
+
+We can not deny that the environment will have an impact on Teenagers' cognition. Therefore, through this graph, we can see the severity of this problem in different locations.
+
+```{r}
+Weight_Issues %>%
+  filter(
+    Greater_Risk_Question == "Described themselves as slightly or very overweight",
+    Sex != "Total"
+  ) %>%
+  drop_na(Greater_Risk_Data_Value) %>%
+  group_by(Sex, YEAR) %>%
+  summarise(Overweight_Misconception = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
+  ggplot(aes(x = YEAR, y = Overweight_Misconception, fill = Sex)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  xlab("Sex") +
+  ylab("Percentage")
+```
+What we can see from this chart is that for a long time, there is no obvious sign of easing this problem, and females are more vulnerable.
+
+
 ```{r}
 Weight_Issues %>%
   ggplot(aes(x=Greater_Risk_Low_Confidence_Limit, y = LocationDesc))+
