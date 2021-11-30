@@ -84,8 +84,7 @@ Weight_Issues_Edited <- Weight_Issues %>%
        Y = "Greater Risk percentage (%)")
 Substance_Abuse_Edited %>%
   group_by(Sex) %>%
-ggplot(aes(x=Grade, y = Pop_at_Grisk, fill=Sex, colour = Sex)) +
-  geom_jitter() 
+ggplot(aes(x=Grade, y = Pop_at_Grisk,colour = Sex)) +
   geom_jitter() +
   geom_smooth(method = "lm", se = FALSE)
 ```
