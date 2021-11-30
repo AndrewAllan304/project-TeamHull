@@ -78,7 +78,10 @@ Weight_Issues_Edited <- Weight_Issues %>%
 
 ```{r}
   ggplot(Substance_Abuse_Edited ,aes(x=Grade, y = (Greater_Risk_Data_Value/100))) +
-  geom_jitter(aes(colour = Sex))
+  geom_jitter(aes(colour = Sex))+
+  labs(title = "Greater risk (%) by grade",
+       x = "Grade",
+       Y = "Greater Risk percentage (%)")
 ```
 
 This graph shows the amount of each grade that is represented on this list of Substance Abuse related events grouping by Sex. This shows a fairly even split between male and females.
