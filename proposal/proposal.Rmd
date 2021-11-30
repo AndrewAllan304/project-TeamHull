@@ -125,10 +125,12 @@ This graph shows the amount of each grade represented in the data for weight iss
 ```{r}
 Weight_Issues_Edited %>%
   group_by(LocationDesc) %>%
-  ggplot(aes(x = LocationDesc , y = Greater_Risk_Data_Value, colour = LocationDesc)) +
-  geom_line() +
-  theme(axis.text.x = element_text(angle = 90, size = 5), legend.position = "None") +
-  xlab("Location") +
-  ylab("Percentage of the Population at Greater Risk")
+  drop_na(Greater_Risk_Data_Value) %>%
+  summarise(bingo = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
+  ggplot(aes(x = LocationDesc , y = bingo, fill = LocationDesc)) +
+  geom_bar(stat = "identity", position = "dodge") +
+theme(axis.text.x = element_text(angle = 90, size = 5), legend.position = "None") +
+xlab("Location") +
+ylab("Percentage of the Population at Greater Risk")
 ```
 
