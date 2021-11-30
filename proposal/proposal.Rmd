@@ -62,13 +62,13 @@ Substance_Abuse %>%
 ```{r}
 Substance_Abuse_Edited <- Substance_Abuse %>%
   mutate(Pop_at_Grisk = (Greater_Risk_Data_Value/100) * Sample_Size)%>%
-  group_by(YEAR, LocationDesc, Sample_Size, Pop_at_Grisk, Sex, Race, Grade, Greater_Risk_Data_Value,)
+  group_by(YEAR, LocationDesc, Sample_Size, Pop_at_Grisk, Sex, Race, Grade, Greater_Risk_Data_Value,Greater_Risk_High_Confidence_Limit, Greater_Risk_Low_Confidence_Limit, Lesser_Risk_Low_Confidence_Limit, Lesser_Risk_High_Confidence_Limit, GeoLocation, QuestionCode, LocationId)
 ```
 
 ```{r}
 Weight_Issues_Edited <- Weight_Issues %>%
   mutate(Pop_at_Grisk = (Greater_Risk_Data_Value/100) * Sample_Size)%>%
-  group_by(YEAR, LocationDesc, Sample_Size, Pop_at_Grisk, Sex, Race, Grade, Greater_Risk_Data_Value,)
+  group_by(YEAR, LocationDesc, Sample_Size, Pop_at_Grisk, Sex, Race, Grade, Greater_Risk_Data_Value, Greater_Risk_High_Confidence_Limit, Greater_Risk_Low_Confidence_Limit, Lesser_Risk_High_Confidence_Limit, Lesser_Risk_Low_Confidence_Limit, GeoLocation, QuestionCode, LocationId)
 ```
 
 
