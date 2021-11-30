@@ -224,9 +224,15 @@ fairly even split between male and females.
 
 ``` r
 Weight_Issues %>%
-  group_by(Race) %>%
-  ggplot(aes(x=Grade, fill=Race)) 
+  ggplot(aes(x=Greater_Risk_Low_Confidence_Limit, y = LocationDesc))+
+  geom_point(aes(colour = Sex))+
+  facet_wrap(~Grade)+
+  labs(title = "Location V Grisk Low Confidence",
+       x = "Grisk low Confidence",
+       y = "Location")
 ```
+
+    ## Warning: Removed 26846 rows containing missing values (geom_point).
 
 ![](proposal_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
