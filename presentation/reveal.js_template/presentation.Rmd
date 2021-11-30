@@ -27,17 +27,28 @@ knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618,
 ```{r load-data, include=FALSE}
 Substance_Abuse <- read.csv(here::here("data/Substance Abuse.csv"))
 Weight_Issues <- read.csv(here::here("data/Weight Issues.csv"))
+
+Substance_Abuse_Edited <- read.csv(here::here("data/Substance Abuse Edited.csv"))
+Weight_Issues_Edited <- read.csv(here::here("data/Weight Issues Edited.csv"))
+
 ```
 
-## Our goals with this project are to...
+## Our goals with this project were to...
 
 - Discover whether risky behavior such as "substance abuse" and "weight issues" may appear more or less frequently among different categorical variables such as sex, race, etc. 
 
 - Model how risky behavior trends throughout different grades
 
+- Map important or interesting trends that we found along the way
 
 
-# Section title
+# Our Dataset
+
+```{r}
+glimpse(Substance_Abuse_Edited)
+glimpse(Weight_Issues_Edited)
+
+```
 
 # Hello World
 
