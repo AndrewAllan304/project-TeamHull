@@ -63,6 +63,26 @@ glimpse(Substance_Abuse_Edited)
 glimpse(Weight_Issues_Edited)
 
 ```
+# Population at Greater Risk of Substance Abuse over Time
+
+```{r}
+Substance_Abuse_Edited %>%
+  filter(
+    Sex != "Total",
+    Greater_Risk_Question == "Drank alcohol for the first time before age 11 years"
+  ) %>%
+  drop_na(Greater_Risk_Data_Value) %>%
+  group_by(Sex, YEAR) %>%
+  summarise(Percentage_Greater_Risk = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
+```
+```{r}
+  ggplot(aes(x = YEAR, y = Percentage_Greater_Risk, fill = Sex)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  theme_minimal()
+
+```
+- Females at lower risk overall to abuse substances
+- Risk of substance abuse has been going down over time
 
 # Using reveal.js
 
@@ -171,7 +191,7 @@ ggplot(data = iris_modified, mapping = aes(x = Sepal.Width, y = Sepal.Length, co
 If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
 
 ```{r iris-table, echo = FALSE}
-kable(head(iris), format = "html")
+table(head(Substance_Abuse_Edited), format = "html")
 ```
 
 # Images

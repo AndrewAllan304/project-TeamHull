@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="Team Hull   Names of team members" />
+  <meta name="author" content="Team Hull   Philip Wieczorek, Andrew Allan, Joshua Brown, Fengshou Miao" />
   <meta name="dcterms.date" content="2021-11-30" />
   <title>Youth Risk Behavior</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -518,7 +518,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section>
     <h1 class="title">Youth Risk Behavior</h1>
   <h1 class="subtitle"><font size='6'>Substance Abuse &amp; Weight issues</font></h1>
-    <h2 class="author"><font size='8'>Team Hull <br> Names of team members</font></h2>
+    <h2 class="author"><font size='8'>Team Hull <br> Philip Wieczorek, Andrew Allan, Joshua Brown, Fengshou Miao</font></h2>
     <h3 class="date"><font size = '6'>2021-11-30</font></h3>
 </section>
 
@@ -539,8 +539,8 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li><p>Map important or interesting trends that we found along the way</p></li>
 </ul>
 </section>
-<section id="our-dataset" class="title-slide slide level1">
-<h1>Our Dataset</h1>
+<section id="our-dataset-substance-abuse" class="title-slide slide level1">
+<h1>Our Dataset: Substance Abuse</h1>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(Substance_Abuse_Edited)</span></code></pre></div>
 <pre><code>## Rows: 33,408
 ## Columns: 36
@@ -581,6 +581,10 @@ document.getElementsByTagName('head')[0].appendChild(style);
 ## $ StratID3                                &lt;chr&gt; &quot;G19&quot;, &quot;G19&quot;, &quot;G17&quot;, &quot;G19&quot;, &quot;G…
 ## $ StratificationType                      &lt;chr&gt; &quot;Territory&quot;, &quot;State&quot;, &quot;State&quot;,…
 ## $ Pop_at_Grisk                            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA…</code></pre>
+</section>
+
+<section id="our-dataset-weight-issues" class="title-slide slide level1">
+<h1>Our Dataset: Weight Issues</h1>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(Weight_Issues_Edited)</span></code></pre></div>
 <pre><code>## Rows: 40,032
 ## Columns: 36
@@ -623,12 +627,20 @@ document.getElementsByTagName('head')[0].appendChild(style);
 ## $ Pop_at_Grisk                            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA…</code></pre>
 </section>
 
-<section id="hello-world" class="title-slide slide level1">
-<h1>Hello World</h1>
-<ul>
-<li><p>Click the <code>Knit</code> button to compile your presentation</p></li>
-<li><p>Make sure to commit and push all resulting files to your GitHub repo</p></li>
-</ul>
+<section id="population-at-greater-risk-of-substance-abuse-over-time" class="title-slide slide level1">
+<h1>Population at Greater Risk of Substance Abuse over Time</h1>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Substance_Abuse_Edited <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    Sex <span class="sc">!=</span> <span class="st">&quot;Total&quot;</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    Greater_Risk_Question <span class="sc">==</span> <span class="st">&quot;Drank alcohol for the first time before age 11 years&quot;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(Greater_Risk_Data_Value) <span class="sc">%&gt;%</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Sex, YEAR) <span class="sc">%&gt;%</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Percentage_Greater_Risk =</span> <span class="fu">weighted.mean</span>(Greater_Risk_Data_Value, Sample_Size)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> YEAR, <span class="at">y =</span> Percentage_Greater_Risk, <span class="at">fill =</span> Sex)) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
+<pre><code>## `summarise()` has grouped output by &#39;Sex&#39;. You can override using the `.groups` argument.</code></pre>
+<p><img src="presentation_files/figure-revealjs/unnamed-chunk-3-1.png" width="80%" /> - Females at lower risk overall to abuse substances - Risk of substance abuse has been going down over time</p>
 </section>
 
 <section>
