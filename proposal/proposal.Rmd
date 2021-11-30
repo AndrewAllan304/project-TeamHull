@@ -61,14 +61,17 @@ Substance_Abuse %>%
 
 ```{r}
 Substance_Abuse_Edited <- Substance_Abuse %>%
-  mutate(Pop_at_Grisk = (Greater_Risk_Data_Value/100) * Sample_Size)
+  mutate(Pop_at_Grisk = (Greater_Risk_Data_Value/100) * Sample_Size)%>%
+  group_by(YEAR, LocationDesc, Sample_Size, Pop_at_Grisk, Sex, Race, Grade, Greater_Risk_Data_Value,)
+ 
 ```
 ```{r}
 
 ```
 ```{r}
 Weight_Issues_Edited <- Weight_Issues %>%
-  mutate(Pop_at_Grisk = (Greater_Risk_Data_Value/100) * Sample_Size)
+  mutate(Pop_at_Grisk = (Greater_Risk_Data_Value/100) * Sample_Size)%>%
+  group_by(YEAR, LocationDesc, Sample_Size, Pop_at_Grisk, Sex, Race, Grade, Greater_Risk_Data_Value,)
 ```
 ```{r}
 

@@ -153,7 +153,7 @@ year and and subtopic to see whether there is some sort of trend with
 the way these issues develop as high schoolers complete each grade
 level. Furthermore, to see the breakdown on who is affected more, sex,
 race, and grade will be used in comparison. This will help us see if
-there are any trends, such as more people starting to abuse substances
+there are a)ny trends, such as more people starting to abuse substances
 as the approach grade x, or if male or female high school children are
 more prone to having behavioral issues with weight and dietary health.
 
@@ -168,27 +168,77 @@ substance abuse or weight issues by population, in order to see whether,
 for example, certain urban/rural areas or more conservative/liberal
 states are experiencing more or less of each of these problems.
 
-##4
+## 4. Initial Data Manipulation and Visualization
 
 ``` r
 Substance_Abuse %>%
-  group_by(Sex) %>%
-ggplot(aes(x=Grade, fill=Sex)) +
-  geom_bar()
+  group_by(Sex, Grade) %>%
+  summarise(n())
 ```
 
-![](proposal_files/figure-gfm/unnamed-chunk-3-1.png)<!-- --> This graph
-shows the ammount of each grade that is represented on this list of
-Substance Abuse related events grouping by Sex. This shows a fairly even
-split between male and females.
+    ## `summarise()` has grouped output by 'Sex'. You can override using the `.groups` argument.
+
+    ## # A tibble: 12 × 3
+    ## # Groups:   Sex [3]
+    ##    Sex    Grade `n()`
+    ##    <chr>  <chr> <int>
+    ##  1 Female 6th    2784
+    ##  2 Female 7th    2784
+    ##  3 Female 8th    2784
+    ##  4 Female Total  2784
+    ##  5 Male   6th    2784
+    ##  6 Male   7th    2784
+    ##  7 Male   8th    2784
+    ##  8 Male   Total  2784
+    ##  9 Total  6th    2784
+    ## 10 Total  7th    2784
+    ## 11 Total  8th    2784
+    ## 12 Total  Total  2784
+
+``` r
+Substance_Abuse_Edited <- Substance_Abuse %>%
+  mutate(Pop_at_Grisk = (Greater_Risk_Data_Value/100) * Sample_Size)%>%
+  group_by(YEAR, LocationDesc, Sample_Size, Pop_at_Grisk, Sex, Race, Grade, Greater_Risk_Data_Value,)
+```
+
+``` r
+Weight_Issues_Edited <- Weight_Issues %>%
+  mutate(Pop_at_Grisk = (Greater_Risk_Data_Value/100) * Sample_Size)%>%
+  group_by(YEAR, LocationDesc, Sample_Size, Pop_at_Grisk, Sex, Race, Grade, Greater_Risk_Data_Value,)
+```
+
+``` r
+Substance_Abuse_Edited %>%
+  group_by(Sex) %>%
+ggplot(aes(x=Grade, y = (Greater_Risk_Data_Value/100), fill=Sex)) +
+  geom_jitter()
+```
+
+    ## Warning: Removed 22131 rows containing missing values (geom_point).
+
+![](proposal_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+
+This graph shows the amount of each grade that is represented on this
+list of Substance Abuse related events grouping by Sex. This shows a
+fairly even split between male and females.
 
 ``` r
 Weight_Issues %>%
   group_by(Race) %>%
-  ggplot(aes(x=Grade, fill=Race)) +
+  ggplot(aes(x=Grade, fill=Race)) 
+```
+
+![](proposal_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+
+``` r
+Weight_Issues %>%
+  group_by(Sex) %>%
+  ggplot(aes(x=Greater_Risk_Question, fill=Sex)) +
   geom_bar()
 ```
 
-![](proposal_files/figure-gfm/unnamed-chunk-4-1.png)<!-- --> This graph
-shows the ammount of each grade represnted in the data for weight issues
-and shows there is no great disparity between races on the issue.
+![](proposal_files/figure-gfm/unnamed-chunk-9-2.png)<!-- -->
+
+This graph shows the amount of each grade represented in the data for
+weight issues and shows there is no great disparity between races on the
+issue.
