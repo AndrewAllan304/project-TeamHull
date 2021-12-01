@@ -29,13 +29,13 @@ Substance_Abuse <- read.csv(here::here("data/Substance Abuse.csv"))
 Weight_Issues <- read.csv(here::here("data/Weight Issues.csv"))
 ```
 
-```{r}
+```{r echo=FALSE}
 Substance_Abuse_Edited <- Substance_Abuse %>%
   mutate(Pop_at_Grisk = (Greater_Risk_Data_Value/100) * Sample_Size)%>%
   group_by(YEAR, LocationDesc, Sample_Size, Pop_at_Grisk, Sex, Race, Grade, Greater_Risk_Data_Value,Greater_Risk_High_Confidence_Limit, Greater_Risk_Low_Confidence_Limit, Lesser_Risk_Low_Confidence_Limit, Lesser_Risk_High_Confidence_Limit, GeoLocation, QuestionCode, LocationId)
 ```
 
-```{r}
+```{r echo=FALSE}
 Weight_Issues_Edited <- Weight_Issues %>%
   mutate(Pop_at_Grisk = (Greater_Risk_Data_Value/100) * Sample_Size)%>%
   group_by(YEAR, LocationDesc, Sample_Size, Pop_at_Grisk, Sex, Race, Grade, Greater_Risk_Data_Value, Greater_Risk_High_Confidence_Limit, Greater_Risk_Low_Confidence_Limit, Lesser_Risk_High_Confidence_Limit, Lesser_Risk_Low_Confidence_Limit, GeoLocation, QuestionCode, LocationId)
@@ -52,20 +52,20 @@ Weight_Issues_Edited <- Weight_Issues %>%
 
 # Our Dataset: Substance Abuse
 
-```{r Substance_Abuse_Edited Glimpse}
+```{r Substance_Abuse_Edited Glimpse, echo=FALSE}
 glimpse(Substance_Abuse_Edited)
 
 ```
 
 # Our Dataset: Weight Issues
 
-```{r Weight_Issues_Glimpse}
+```{r Weight_Issues_Glimpse, echo=FALSE}
 glimpse(Weight_Issues_Edited)
 
 ```
 # Substance Abuse over Time
 
-```{r echo=FALSE}
+```{r SA_Time, echo=FALSE}
 SAE2 <- Substance_Abuse_Edited %>%
   filter(
     Sex != "Total",
@@ -90,7 +90,28 @@ SAE2 %>%
 - Risk of substance abuse has been going down over time
   - Although there was a slight resurgence in the latest year collected
   
+# Weight Issues and Geography
 
+```{r WI_Geo, echo = FALSE}
+Weight_Issues_Edited %>%
+  group_by(LocationDesc) %>%
+  drop_na(Greater_Risk_Data_Value) %>%
+  summarise(bingo = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
+  ggplot(aes(x = reorder(LocationDesc,-bingo) , y = bingo, fill = LocationDesc)) +
+  geom_bar(stat = "identity", position = "dodge") +
+theme(axis.text.x = element_text(angle = 90, size = 5), legend.position = "None") +
+xlab("Location") +
+ylab("% of the Population at Greater Risk")
+```
+
+# Weight Issues and Geography
+
+- Overall, USA has a similar incidence of "weight issues" across the board
+
+- At first glance, seems as if coasts (generally but not always more urban) exhibit more weight issues
+
+- Some spread of rural across the board, a number of islands s.a. Northern Mariana Islands and especially American Samoa trending towards fewer weight issues
+  - This could have to do with culture; heavier weight more accepted/admired in Samoan culture
 
 # Using reveal.js
 
