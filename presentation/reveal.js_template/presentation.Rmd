@@ -113,14 +113,6 @@ ylab("% of the Population at Greater Risk")
 - Some spread of rural across the board, a number of islands s.a. Northern Mariana Islands and especially American Samoa trending towards fewer weight issues
   - This could have to do with culture; heavier weight more accepted/admired in Samoan culture
 
-# Using reveal.js
-
-It's possible to have a horizontal sliding transition as well as nest multiple slides to create a vertical stack.
-
-When presenting, you use the left/right arrows to step through the top-level (horizontal) slides. When you arrive at a vertical stack you can optionally press the up/down arrows to view the vertical slides or skip past them by pressing the right arrow.
-
-(click the down key now)
-
 ## reveal.js
 
 - The presentation is created using the `reveal.js` package
@@ -159,14 +151,6 @@ You can use plain text
 because you can combine HTML and Markdown syntax.
 
 <p style="font-size: 8pt; position: absolute; bottom: -5em; width: 100%; text-align: center;">*You can also add footnotes</p>
-
-# Summarise Important Data
-
-Start off by summarizing the important variables needed for both data sets Weight and Substance Abuse. 
-
-```{r, echo = TRUE}
-
-```
 
 # Plots
 
