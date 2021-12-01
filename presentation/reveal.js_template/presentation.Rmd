@@ -7,6 +7,11 @@ date: <font size = '6'>`r Sys.Date()`</font>
 output:
   revealjs::revealjs_presentation:
     self_contained: false
+    theme: serif
+    highlight: pygments
+    center: true
+---
+
 ---
 
 ```{r load-packages, include = FALSE}
@@ -76,9 +81,11 @@ SAE2 <- Substance_Abuse_Edited %>%
   summarise(Percentage_Greater_Risk = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) 
 
 SAE2 %>%
-  ggplot(aes(x = YEAR, y = Percentage_Greater_Risk, fill = Sex)) +
+  ggplot(aes(x = as.character(YEAR), y = Percentage_Greater_Risk, fill = Sex)) +
   geom_bar(stat = "identity", position = "dodge") +
-  theme_minimal()
+  theme_minimal() +
+  ylab("% at Greater Risk of Substance Abuse") +
+  xlab("Years")
 
 ```
 
@@ -129,6 +136,24 @@ Weight_Issues %>%
   xlab("Year") +
   ylab("% Describing Themselves as Overweight")
 ```
+
+# Percentage Describing Themselves as Overweight
+
+- Females tend to believe they are overweight more frequently than men
+
+- Females have trended down a bit, but has gone up a little bit in recent years, although remaining below 30%
+
+- Males have maintained between 22% and 25%, not much variation over time
+
+# What Could We Have Included?
+
+- Comparing common trends between the two datasets (Is geography correlated?)
+
+- point 2
+
+- point 3
+
+# Overall Conclusions
 
 ## reveal.js
 
