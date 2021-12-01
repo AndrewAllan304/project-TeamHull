@@ -112,6 +112,23 @@ ylab("% of the Population at Greater Risk")
 
 - Some spread of rural across the board, a number of islands s.a. Northern Mariana Islands and especially American Samoa trending towards fewer weight issues
   - This could have to do with culture; heavier weight more accepted/admired in Samoan culture
+  
+# Percentage Describing Themselves as Overweight
+
+```{r Overweight_Percent, echo=FALSE}
+Weight_Issues %>%
+  filter(
+    Greater_Risk_Question == "Described themselves as slightly or very overweight",
+    Sex != "Total"
+  ) %>%
+  drop_na(Greater_Risk_Data_Value) %>%
+  group_by(Sex, YEAR) %>%
+  summarise(Described_as_overweight = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
+  ggplot(aes(x = as.character(YEAR), y = Described_as_overweight, fill = Sex)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  xlab("Year") +
+  ylab("% Describing Themselves as Overweight")
+```
 
 ## reveal.js
 
