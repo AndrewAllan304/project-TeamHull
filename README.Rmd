@@ -6,18 +6,8 @@ output: github_document
 
 ## Summary
 
-Write-up of your project and findings go here. 
-Think of this as the text of your presentation. 
-The length should be roughly 5 minutes when read out loud.
-Although pacing varies, a 5-minute speech is roughly 750 words. 
-To use the word count addin, select the text you want to count the words of (probably this is the 
-Summary section of this document, go to Addins, and select the `Word count` addin).
-This addin counts words using two different algorithms, but the results should be similar and as long as you're in the ballpark of 750 words, you're good! 
-The addin will ignore code chunks and only count the words in prose.
+For our project, we decided to focus on an issue relating to young people in recent years. We wanted to focus on the data provided by Youth Risk Surveillance System(YRBSS), for the Centres for Disease Control and Prevention (CDC), that monitors the 6 risky behaviours; violence and injury; substance abuse; tobacco use ; weight problems; lack of physical activity; and risky sexual behaviour. The original data set we looked at included all these risky behaviours but was inadequate as there was 13 million data entries from between the years 1991-2017 and across multiple age ranges and American school grades which is a data set too large to work with in Rstudio therefore, we decided to focus on 2 risky behaviour data sets(Weight Issues & Substance Abuse) in one school range(Middle School) 
 
-You can also load your data here and present any analysis results / plots, but I strongly urge you to keep that to a minimum (maybe only the most important graphic, if you have one you can choose). 
-And make sure to hide your code with  `echo = FALSE` unless the point you are trying to make is about the code itself.
-Your results with proper output and graphics go in your presentation, this space is for a brief summary of your project.
 
 ```{r load-data, echo = FALSE}
 Weight_Issues <- read.csv(here::here("data/Weight Issues.csv"))
@@ -33,9 +23,8 @@ Our presentation can be found https://f2209927ca3c49c386c7f1f6717e6018.app.rstud
 Centers for Disease Control and Prevention 2019, *DASH YRBSS - Weight Control (MS), DASH - Youth Risk Behavior Surveillance System (YRBSS): Middle School* DASH Public Inquiries, viewed 22 October 2021, data file(CSV), <https://chronicdata.cdc.gov/Youth-Risk-Behaviors/DASH-YRBSS-Weight-Control-MS-/xg5u-askg>
 
 Centers for Disease Control and Prevention 2019, *DASH YRBSS - Alcohol and Other Drug Use (MS), DASH - Youth Risk Behavior Surveillance System (YRBSS): Middle School* DASH Public Inquiries, viewed 22 October 2021, data file(CSV), <https://chronicdata.cdc.gov/Youth-Risk-Behaviors/DASH-YRBSS-Alcohol-and-Other-Drug-Use-MS-/bdg5-rnzz>
-## References
 
-#References 
+#References
 
 Data Set (Substance Abuse): https://chronicdata.cdc.gov/Youth-Risk-Behaviors/DASH-YRBSS-Alcohol-and-Other-Drug-Use-MS-/bdg5-rnzz,
 
