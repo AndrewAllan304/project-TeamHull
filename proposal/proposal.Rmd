@@ -94,6 +94,26 @@ Substance_Abuse_Edited %>%
 ```
 
 ```{r}
+Substance_Summary <- Substance_Abuse_Edited %>%
+  filter(
+    Greater_Risk_Question == "Drank alcohol for the first time before age 11 years"
+  ) %>%
+  drop_na(Greater_Risk_Data_Value) %>%
+  group_by(YEAR) %>%
+  summarise(Percentage_Greater_Risk = weighted.mean(Greater_Risk_Data_Value, Sample_Size))
+
+fit1 <- lm(Percentage_Greater_Risk ~ YEAR, data = Substance_Summary)
+
+Substance_Summary %>%
+  ggplot(aes(x = YEAR, y = Percentage_Greater_Risk)) +
+  geom_point() +
+  stat_smooth(method = "lm", col = "violet") +
+  labs(title = paste("y ≈ ", signif(summary(fit1)$coef[[2]], 4), 
+                     "x + ", signif(summary(fit1)$coef[[1]], 4))
+       )
+```
+
+```{r}
 Substance_Abuse_Edited %>%
   group_by(Sex) %>%
   ggplot(aes(x=Grade, y = Pop_at_Grisk, fill=Sex, colour = Sex)) +

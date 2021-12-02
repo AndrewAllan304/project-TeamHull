@@ -344,3 +344,42 @@ ylab("Percentage of the Population at Greater Risk")
 ```
 
 ![](proposal_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+
+``` r
+Substance_Abuse_Edited %>%
+  group_by(LocationDesc) %>%
+  drop_na(Greater_Risk_Data_Value) %>%
+  summarise(bingo = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
+  ggplot(aes(x = LocationDesc , y = bingo, fill = LocationDesc)) +
+  geom_bar(stat = "identity", position = "dodge") +
+theme(axis.text.x = element_text(angle = 90, size = 5), legend.position = "None") +
+xlab("Location") +
+ylab("Percentage of the Population at Greater Risk")
+```
+
+![](proposal_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+
+``` r
+Substance_Abuse_Edited %>%
+  group_by(Race) %>%
+  drop_na(Greater_Risk_Data_Value) %>%
+  summarise(bingo = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
+  ggplot(aes(x = Race , y = bingo, fill = Race)) +
+  geom_bar(stat = "identity", position = "dodge") +
+theme(axis.text.x = element_blank()) +
+xlab("Race") +
+ylab("Percentage of the Population at Greater Risk")
+```
+
+![](proposal_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+
+``` r
+Weight_Issues_Edited %>%
+  filter(Sex == "Female") %>%
+  ggplot(aes(x = YEAR, y = Pop_at_Grisk, colour = Sex)) +
+  geom_line()
+```
+
+    ## Warning: Removed 50 row(s) containing missing values (geom_path).
+
+![](proposal_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
