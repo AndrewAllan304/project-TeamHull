@@ -149,11 +149,17 @@ Weight_Issues %>%
 
 - Comparing common trends between the two datasets (Is geography correlated?)
 
-- point 2
+- Looking for more opportunities to find correlation, regression, other trends
 
-- point 3
+- Perhaps creating a literal map with a "heat map" with an additional package
+  - Would give us slightly more precise visualization with respect to geography
 
 # Overall Conclusions
+
+- Females have greater incidence of "weight issues"
+- Males more likely to be exposed to "substance abuse"
+- Some progress made in both, but still plaguing our generation
+- Important topic to discuss --> societal relevance, mapping the impact of body positivity and substance abuse reduction campaigns
 
 ## reveal.js
 
