@@ -37,6 +37,58 @@ these topics. We came up with our goals as:
 
 -   Map important or interesting trends that we found along the way.
 
+From our data and visualizations we we were able to conclude about
+weight issues:
+
+-   Overall, USA has a similar incidence of “weight issues” across the
+    board.
+
+-   At first glance, seems as if coasts (generally but not always more
+    urban) exhibit more weight issues.
+
+-   Some spread of rural across the board, a number of islands s.a.
+    Northern Mariana Islands and especially American Samoa trending
+    towards fewer weight issues.
+
+-   This could have to do with culture; heavier weight more
+    accepted/admired in Samoan culture.
+
+-   Females tend to believe they are overweight more frequently than
+    men.
+
+-   Females have trended down a bit, but has gone up a little bit in
+    recent years, although remaining below 30%.
+
+-   Males have maintained between 22% and 25%, not much variation over
+    time.
+
+From our data and visualizations we we were able to conclude about
+substance abuse:
+
+-   Females at lower risk overall than men to abuse substances
+
+-   Risk of substance abuse has been going down over time
+
+    -   Although there was a slight resurgence in the latest year
+        collected
+
+If we had more time or the coding ability we would have liked to:
+
+-   Comparing common trends between the two datasets (Is geography
+    correlated?.
+
+-   Comparing all 6 risk factors in some way. or comparing the 2 risk
+    factors over different school levels.
+
+-   Looking for more opportunities to find correlation, regression,
+    other trends.
+
+-   Perhaps creating a literal map with a “heat map” with an additional
+    package.
+
+-   Would give us slightly more precise visualization with respect to
+    geography.
+
 ## Presentation
 
 Our presentation can be found
@@ -56,7 +108,7 @@ and Other Drug Use (MS), DASH - Youth Risk Behavior Surveillance System
 data file(CSV),
 <https://chronicdata.cdc.gov/Youth-Risk-Behaviors/DASH-YRBSS-Alcohol-and-Other-Drug-Use-MS-/bdg5-rnzz>
 
-#References
+## References
 
 Data Set (Substance Abuse):
 <https://chronicdata.cdc.gov/Youth-Risk-Behaviors/DASH-YRBSS-Alcohol-and-Other-Drug-Use-MS-/bdg5-rnzz>,
