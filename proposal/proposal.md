@@ -291,11 +291,11 @@ Weight_Issues %>%
   ) %>%
   drop_na(Greater_Risk_Data_Value) %>%
   group_by(Sex, YEAR) %>%
-  summarise(Overweight_Misconception = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
-  ggplot(aes(x = YEAR, y = Overweight_Misconception, fill = Sex)) +
+  summarise(Described_as_overweight = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
+  ggplot(aes(x = as.character(YEAR), y = Described_as_overweight, fill = Sex)) +
   geom_bar(stat = "identity", position = "dodge") +
-  xlab("Sex") +
-  ylab("Percentage")
+  xlab("Year") +
+  ylab("% Describing Themselves as Overweight")
 ```
 
     ## `summarise()` has grouped output by 'Sex'. You can override using the `.groups` argument.
