@@ -1,5 +1,5 @@
 ---
-title: "Project proposal"
+title: "Youth Risk Behavior"
 author: "Team Hull"
 output: github_document
 ---
