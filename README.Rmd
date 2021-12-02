@@ -6,7 +6,7 @@ output: github_document
 
 ## Summary
 
-For our project, we decided to focus on an issue relating to young people in recent years. We wanted to focus on the data provided by Youth Risk Surveillance System(YRBSS), for the Centres for Disease Control and Prevention (CDC), that monitors the 6 risky behaviours; violence and injury; substance abuse; tobacco use ; weight problems; lack of physical activity; and risky sexual behaviour. The original data set we looked at included all these risky behaviours but was inadequate as there was 13 million data entries from between the years 1991-2017 and across multiple age ranges and American school grades which is a data set too large to work with in Rstudio therefore, we decided to focus on 2 risky behaviour data sets(Weight Issues & Substance Abuse) in one school range(Middle School) 
+For our project, we decided to focus on an issue relating to young people in recent years. We wanted to focus on the data provided by Youth Risk behavior Surveillance System(YRBSS), for the Centers for Disease Control and Prevention (CDC), that monitors the 6 risky behaviors; violence and injury; substance abuse; tobacco use ; weight problems; lack of physical activity; and risky sexual behavior. The original data set we looked at included all these risky behaviors but was inadequate as there was 13 million data entries from between the years 1991-2017 and across multiple age ranges and American school grades which is a data set too large to work with in Rstudio therefore, we decided to focus on 2 risky behavior data sets(Weight Issues & Substance Abuse) in one school range(Middle School) 
 
 
 ```{r load-data}

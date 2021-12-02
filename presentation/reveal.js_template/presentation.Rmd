@@ -45,6 +45,13 @@ Weight_Issues_Edited <- Weight_Issues %>%
   mutate(Pop_at_Grisk = (Greater_Risk_Data_Value/100) * Sample_Size)%>%
   group_by(YEAR, LocationDesc, Sample_Size, Pop_at_Grisk, Sex, Race, Grade, Greater_Risk_Data_Value, Greater_Risk_High_Confidence_Limit, Greater_Risk_Low_Confidence_Limit, Lesser_Risk_High_Confidence_Limit, Lesser_Risk_Low_Confidence_Limit, GeoLocation, QuestionCode, LocationId)
 ```
+#Original Ideas
+
+-CDC data from Youth Risk Behavior Surveillance System.
+
+- Violence; Unprotected sexual practice; Substance abuse; Tobacco use; Weight Issues; Lack of physical activity.
+
+- 2 of the 6 risk behaviours 
 
 ## Our goals with this project were to...
 
@@ -149,9 +156,12 @@ Weight_Issues %>%
 
 - Comparing common trends between the two datasets (Is geography correlated?)
 
-- point 2
+- Comparing all 6 risk factors in some way. or comparing the 2 risk factors over different school levels.
 
 - point 3
 
 # Overall Conclusions
 
+#Data Collection
+
+Our data was collected from the Youth Risk Behavior Surveillance System(YRBSS), for the Centers for Disease Control and Prevention (CDC) and can be vied on the CDCs website.
