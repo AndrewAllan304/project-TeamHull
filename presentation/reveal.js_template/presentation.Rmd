@@ -112,7 +112,7 @@ Weight_Issues_Edited %>%
   group_by(LocationDesc) %>%
   drop_na(Greater_Risk_Data_Value) %>%
   summarise(bingo = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
-  ggplot(aes(x = reorder(LocationDesc,-bingo) , y = bingo, fill = LocationDesc)) +
+  ggplot(aes(x = reorder(LocationDesc, -bingo) , y = bingo, fill = LocationDesc)) +
   geom_bar(stat = "identity", position = "dodge") +
 theme(axis.text.x = element_text(angle = 90, size = 5), legend.position = "None") +
 xlab("Location") +
@@ -155,6 +155,48 @@ Weight_Issues %>%
 - Females have trended down a bit, but has gone up a little bit in recent years, although remaining below 30%
 
 - Males have maintained between 22% and 25%, not much variation over time
+
+# Substance Abuse Issues and Geography
+
+```{r}
+Substance_Abuse_Edited %>%
+  group_by(LocationDesc) %>%
+  drop_na(Greater_Risk_Data_Value) %>%
+  summarise(bingo = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
+  ggplot(aes(x = reorder(LocationDesc, -bingo) , y = bingo, fill = LocationDesc)) +
+  geom_bar(stat = "identity", position = "dodge") +
+theme(axis.text.x = element_text(angle = 90, size = 5), legend.position = "None") +
+xlab("Location") +
+ylab("Percentage of the Population at Greater Risk")
+```
+
+# Substance Abuse Issues and Geography
+
+- Dallas and Alabama are the areas with the most substance abuse issues by quite a bit.
+
+- American Samoa is the least
+ 
+- There is a greater range of substance abuse issues in these areas than weight issues.
+
+# Substance Abuse Issues by Race
+
+```{r}
+Substance_Abuse_Edited %>%
+  group_by(Race) %>%
+  drop_na(Greater_Risk_Data_Value) %>%
+  summarise(bingo = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
+  ggplot(aes(x = reorder(Race, -bingo) , y = bingo, fill = Race)) +
+  geom_bar(stat = "identity", position = "dodge") +
+theme(axis.text.x = element_blank()) +
+xlab("Race") +
+ylab("Percentage of the Population at Greater Risk")
+```
+
+# Substance Abuse Issues by Race
+
+- Native American or Other Pacific Islander, Hispanic or Latino and Black or African American have the highest percentage of their populations with substance abuse issues. 
+
+- The race with the lowest percentage of substance abuse issues is Asian.
 
 # What Could We Have Included?
 
