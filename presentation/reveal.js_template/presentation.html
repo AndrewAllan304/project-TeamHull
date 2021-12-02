@@ -9,15 +9,24 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="presentation_files/reveal.js-3.3.0.1/css/reveal.css"/>
+  <link rel="stylesheet" href="presentation_files/reveal.js-4.1.2/dist/reset.css">
+  <link rel="stylesheet" href="presentation_files/reveal.js-4.1.2/dist/reveal.css">
 
-
-
-<link rel="stylesheet" href="presentation_files/reveal.js-3.3.0.1/css/theme/serif.css" id="theme">
-
-
-  <!-- some tweaks to reveal css -->
   <style type="text/css">
+    /* CSS from pandoc style.html() */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+                  </style>
+
+  <link rel="stylesheet" href="presentation_files/reveal.js-4.1.2/dist/theme/serif.css" id="theme">
+
+
+  <style type="text/css">
+  /* some tweaks to reveal css */
     .reveal h1 { font-size: 2.0em; }
     .reveal h2 { font-size: 1.5em;  }
     .reveal h3 { font-size: 1.25em;	}
@@ -27,9 +36,6 @@
     .reveal .slides>section>section {
       padding: 0px 0px;
     }
-
-
-
     .reveal table {
       border-width: 1px;
       border-spacing: 2px;
@@ -55,394 +61,7 @@
       border-style: dotted;
       border-color: gray;
     }
-
-
   </style>
-
-    <style type="text/css">code{white-space: pre;}</style>
-
-
-<!-- Printing and PDF exports -->
-<script id="paper-css" type="application/dynamic-css">
-
-/* Default Print Stylesheet Template
-   by Rob Glazebrook of CSSnewbie.com
-   Last Updated: June 4, 2008
-
-   Feel free (nay, compelled) to edit, append, and
-   manipulate this file as you see fit. */
-
-
-@media print {
-
-	/* SECTION 1: Set default width, margin, float, and
-	   background. This prevents elements from extending
-	   beyond the edge of the printed page, and prevents
-	   unnecessary background images from printing */
-	html {
-		background: #fff;
-		width: auto;
-		height: auto;
-		overflow: visible;
-	}
-	body {
-		background: #fff;
-		font-size: 20pt;
-		width: auto;
-		height: auto;
-		border: 0;
-		margin: 0 5%;
-		padding: 0;
-		overflow: visible;
-		float: none !important;
-	}
-
-	/* SECTION 2: Remove any elements not needed in print.
-	   This would include navigation, ads, sidebars, etc. */
-	.nestedarrow,
-	.controls,
-	.fork-reveal,
-	.share-reveal,
-	.state-background,
-	.reveal .progress,
-	.reveal .backgrounds {
-		display: none !important;
-	}
-
-	/* SECTION 3: Set body font face, size, and color.
-	   Consider using a serif font for readability. */
-	body, p, td, li, div {
-		font-size: 20pt!important;
-		font-family: Georgia, "Times New Roman", Times, serif !important;
-		color: #000;
-	}
-
-	/* SECTION 4: Set heading font face, sizes, and color.
-	   Differentiate your headings from your body text.
-	   Perhaps use a large sans-serif for distinction. */
-	h1,h2,h3,h4,h5,h6 {
-		color: #000!important;
-		height: auto;
-		line-height: normal;
-		font-family: Georgia, "Times New Roman", Times, serif !important;
-		text-shadow: 0 0 0 #000 !important;
-		text-align: left;
-		letter-spacing: normal;
-	}
-	/* Need to reduce the size of the fonts for printing */
-	h1 { font-size: 28pt !important;  }
-	h2 { font-size: 24pt !important; }
-	h3 { font-size: 22pt !important; }
-	h4 { font-size: 22pt !important; font-variant: small-caps; }
-	h5 { font-size: 21pt !important; }
-	h6 { font-size: 20pt !important; font-style: italic; }
-
-	/* SECTION 5: Make hyperlinks more usable.
-	   Ensure links are underlined, and consider appending
-	   the URL to the end of the link for usability. */
-	a:link,
-	a:visited {
-		color: #000 !important;
-		font-weight: bold;
-		text-decoration: underline;
-	}
-	/*
-	.reveal a:link:after,
-	.reveal a:visited:after {
-		content: " (" attr(href) ") ";
-		color: #222 !important;
-		font-size: 90%;
-	}
-	*/
-
-
-	/* SECTION 6: more reveal.js specific additions by @skypanther */
-	ul, ol, div, p {
-		visibility: visible;
-		position: static;
-		width: auto;
-		height: auto;
-		display: block;
-		overflow: visible;
-		margin: 0;
-		text-align: left !important;
-	}
-	.reveal pre,
-	.reveal table {
-		margin-left: 0;
-		margin-right: 0;
-	}
-	.reveal pre code {
-		padding: 20px;
-		border: 1px solid #ddd;
-	}
-	.reveal blockquote {
-		margin: 20px 0;
-	}
-	.reveal .slides {
-		position: static !important;
-		width: auto !important;
-		height: auto !important;
-
-		left: 0 !important;
-		top: 0 !important;
-		margin-left: 0 !important;
-		margin-top: 0 !important;
-		padding: 0 !important;
-		zoom: 1 !important;
-
-		overflow: visible !important;
-		display: block !important;
-
-		text-align: left !important;
-		-webkit-perspective: none;
-		   -moz-perspective: none;
-		    -ms-perspective: none;
-		        perspective: none;
-
-		-webkit-perspective-origin: 50% 50%;
-		   -moz-perspective-origin: 50% 50%;
-		    -ms-perspective-origin: 50% 50%;
-		        perspective-origin: 50% 50%;
-	}
-	.reveal .slides section {
-		visibility: visible !important;
-		position: static !important;
-		width: auto !important;
-		height: auto !important;
-		display: block !important;
-		overflow: visible !important;
-
-		left: 0 !important;
-		top: 0 !important;
-		margin-left: 0 !important;
-		margin-top: 0 !important;
-		padding: 60px 20px !important;
-		z-index: auto !important;
-
-		opacity: 1 !important;
-
-		page-break-after: always !important;
-
-		-webkit-transform-style: flat !important;
-		   -moz-transform-style: flat !important;
-		    -ms-transform-style: flat !important;
-		        transform-style: flat !important;
-
-		-webkit-transform: none !important;
-		   -moz-transform: none !important;
-		    -ms-transform: none !important;
-		        transform: none !important;
-
-		-webkit-transition: none !important;
-		   -moz-transition: none !important;
-		    -ms-transition: none !important;
-		        transition: none !important;
-	}
-	.reveal .slides section.stack {
-		padding: 0 !important;
-	}
-	.reveal section:last-of-type {
-		page-break-after: avoid !important;
-	}
-	.reveal section .fragment {
-		opacity: 1 !important;
-		visibility: visible !important;
-
-		-webkit-transform: none !important;
-		   -moz-transform: none !important;
-		    -ms-transform: none !important;
-		        transform: none !important;
-	}
-	.reveal section img {
-		display: block;
-		margin: 15px 0px;
-		background: rgba(255,255,255,1);
-		border: 1px solid #666;
-		box-shadow: none;
-	}
-
-	.reveal section small {
-		font-size: 0.8em;
-	}
-
-}  
-</script>
-
-
-<script id="pdf-css" type="application/dynamic-css">
-    
-/**
- * This stylesheet is used to print reveal.js
- * presentations to PDF.
- *
- * https://github.com/hakimel/reveal.js#pdf-export
- */
-
-* {
-	-webkit-print-color-adjust: exact;
-}
-
-body {
-	margin: 0 auto !important;
-	border: 0;
-	padding: 0;
-	float: none !important;
-	overflow: visible;
-}
-
-html {
-	width: 100%;
-	height: 100%;
-	overflow: visible;
-}
-
-/* Remove any elements not needed in print. */
-.nestedarrow,
-.reveal .controls,
-.reveal .progress,
-.reveal .playback,
-.reveal.overview,
-.fork-reveal,
-.share-reveal,
-.state-background {
-	display: none !important;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	text-shadow: 0 0 0 #000 !important;
-}
-
-.reveal pre code {
-	overflow: hidden !important;
-	font-family: Courier, 'Courier New', monospace !important;
-}
-
-ul, ol, div, p {
-	visibility: visible;
-	position: static;
-	width: auto;
-	height: auto;
-	display: block;
-	overflow: visible;
-	margin: auto;
-}
-.reveal {
-	width: auto !important;
-	height: auto !important;
-	overflow: hidden !important;
-}
-.reveal .slides {
-	position: static;
-	width: 100%;
-	height: auto;
-
-	left: auto;
-	top: auto;
-	margin: 0 !important;
-	padding: 0 !important;
-
-	overflow: visible;
-	display: block;
-
-	-webkit-perspective: none;
-	   -moz-perspective: none;
-	    -ms-perspective: none;
-	        perspective: none;
-
-	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
-	   -moz-perspective-origin: 50% 50%;
-	    -ms-perspective-origin: 50% 50%;
-	        perspective-origin: 50% 50%;
-}
-
-.reveal .slides section {
-	page-break-after: always !important;
-
-	visibility: visible !important;
-	position: relative !important;
-	display: block !important;
-	position: relative !important;
-
-	margin: 0 !important;
-	padding: 0 !important;
-	box-sizing: border-box !important;
-	min-height: 1px;
-
-	opacity: 1 !important;
-
-	-webkit-transform-style: flat !important;
-	   -moz-transform-style: flat !important;
-	    -ms-transform-style: flat !important;
-	        transform-style: flat !important;
-
-	-webkit-transform: none !important;
-	   -moz-transform: none !important;
-	    -ms-transform: none !important;
-	        transform: none !important;
-}
-
-.reveal section.stack {
-	margin: 0 !important;
-	padding: 0 !important;
-	page-break-after: avoid !important;
-	height: auto !important;
-	min-height: auto !important;
-}
-
-.reveal img {
-	box-shadow: none;
-}
-
-.reveal .roll {
-	overflow: visible;
-	line-height: 1em;
-}
-
-/* Slide backgrounds are placed inside of their slide when exporting to PDF */
-.reveal section .slide-background {
-	display: block !important;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: -1;
-}
-
-/* All elements should be above the slide-background */
-.reveal section>* {
-	position: relative;
-	z-index: 1;
-}
-
-/* Display slide speaker notes when 'showNotes' is enabled */
-.reveal .speaker-notes-pdf {
-	display: block;
-	width: 100%;
-	max-height: none;
-	left: auto;
-	top: auto;
-	z-index: 100;
-}
-
-/* Display slide numbers when 'slideNumber' is enabled */
-.reveal .slide-number-pdf {
-	display: block;
-	position: absolute;
-	font-size: 14px;
-}
-
-</script>
-
-
-<script>
-var style = document.createElement( 'style' );
-style.type = 'text/css';
-var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
-var style_script = document.getElementById(style_script_id).text;
-style.innerHTML = style_script;
-document.getElementsByTagName('head')[0].appendChild(style);
-</script>
 
     <script src="presentation_files/header-attrs-2.11/header-attrs.js"></script>
 </head>
@@ -450,13 +69,23 @@ document.getElementsByTagName('head')[0].appendChild(style);
   <div class="reveal">
     <div class="slides">
 
-<section>
-    <h1 class="title">Youth Risk Behavior</h1>
+<section id="title-slide">
+  <h1 class="title">Youth Risk Behavior</h1>
   <h1 class="subtitle"><font size='6'>Substance Abuse &amp; Weight issues</font></h1>
-    <h2 class="author"><font size='8'>Team Hull <br> Philip Wieczorek, Andrew Allan, Joshua Brown, Fengshou Miao</font></h2>
-    <h3 class="date"><font size = '6'>2021-12-02</font></h3>
+  <h2 class="author"><font size='8'>Team Hull <br> Philip Wieczorek, Andrew Allan, Joshua Brown, Fengshou Miao</font></h2>
+  <h3 class="institute"><font size='10'>University of Edinburgh</font></h2>
+  <h3 class="date"><font size = '6'>2021-12-02</font></h3>
 </section>
 
+<section class="slide level2">
+
+<p>#Original Ideas</p>
+<p>-CDC data from Youth Risk Behavior Surveillance System.</p>
+<ul>
+<li><p>Violence; Unprotected sexual practice; Substance abuse; Tobacco use; Weight Issues; Lack of physical activity.</p></li>
+<li><p>2 of the 6 risk behaviours</p></li>
+</ul>
+</section>
 <section id="our-goals-with-this-project-were-to" class="slide level2">
 <h2>Our goals with this project were to…</h2>
 <ul>
@@ -603,38 +232,186 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section id="what-could-we-have-included" class="title-slide slide level1">
 <h1>What Could We Have Included?</h1>
 <ul>
-<li><p>Comparing common trends between the two datasets (Is geography correlated?)</p></li>
-<li><p>Comparing all 6 risk factors in some way. or comparing the 2 risk factors over different school levels.</p></li>
-<li><p>point 3</p></li>
+<li>Comparing common trends between the two datasets (Is geography correlated?)</li>
+</ul>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD - Comparing all 6 risk factors in some way. or comparing the 2 risk factors over different school levels. ======= - Looking for more opportunities to find correlation, regression, other trends. &gt;&gt;&gt;&gt;&gt;&gt;&gt; c0c2b6e88d166025cc4b7d8a408a2505f18bfd6d</p>
+<ul>
+<li><p>Perhaps creating a literal map with a “heat map” with an additional package.</p></li>
+<li><p>Would give us slightly more precise visualization with respect to geography.</p></li>
 </ul>
 </section>
 
 <section id="overall-conclusions" class="title-slide slide level1">
 <h1>Overall Conclusions</h1>
-<p>#Data Collection</p>
-<p>Our data was collected from the Youth Risk Behavior Surveillance System(YRBSS), for the Centers for Disease Control and Prevention (CDC) and can be vied on the CDCs website.</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD #Data Collection</p>
+</section>
+
+<section>
+<section id="our-data-was-collected-from-the-youth-risk-behavior-surveillance-systemyrbss-for-the-centers-for-disease-control-and-prevention-cdc-and-can-be-vied-on-the-cdcs-website." class="title-slide slide level1">
+<h1>Our data was collected from the Youth Risk Behavior Surveillance System(YRBSS), for the Centers for Disease Control and Prevention (CDC) and can be vied on the CDCs website.</h1>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD - Females have greater incidence of “weight issues” - Males more likely to be exposed to “substance abuse” - Some progress made in both, but still plaguing our generation - Important topic to discuss –&gt; societal relevance, mapping the impact of body positivity and substance abuse reduction campaigns</p>
+</section>
+<section id="reveal.js" class="slide level2">
+<h2>reveal.js</h2>
+<ul>
+<li><p>The presentation is created using the <code>reveal.js</code> package</p></li>
+<li><p>You can create a slide show broken up into sections by using the # and ## heading tags</p></li>
+<li><p>You can also create a new slide without a header using a horizontal rule (—-)</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>You can also add pauses between content on a slide using (“. . .”)</li>
+</ul>
+<div class="fragment">
+<p>Like this.</p>
+<p>…or using “::: fragment”</p>
+<div class="fragment">
+<p>Like this.</p>
+</div>
+</div>
+</section></section>
+<section id="layouts" class="title-slide slide level1">
+<h1>Layouts</h1>
+<p>You can use plain text</p>
+<ul>
+<li>or bullet points</li>
+</ul>
+<div>
+<div style="float: left; width: 50%;">
+or text in two columns
+</div>
+<div style="float: left; width: 50%;">
+like this
+</div>
+</div>
+<p>because you can combine HTML and Markdown syntax.</p>
+<p style="font-size: 8pt; position: absolute; bottom: -5em; width: 100%; text-align: center;">
+*You can also add footnotes
+</p>
+</section>
+
+<section>
+<section id="plots" class="title-slide slide level1">
+<h1>Plots</h1>
+<p><img src="presentation_files/figure-revealjs/plot-iris-1.png" width="80%" /></p>
+</section>
+<section id="plot-and-text" class="slide level2">
+<h2>Plot and text</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>Some text</li>
+<li>goes here</li>
+</ul>
+</div><div class="column">
+
+</div>
+</div>
+</section>
+<section id="different-widths" class="slide level2">
+<h2>Different widths</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>Some text</li>
+<li>goes here</li>
+</ul>
+</div><div class="column" style="width:60%;">
+
+</div>
+</div>
+</section></section>
+<section id="tables" class="title-slide slide level1">
+<h1>Tables</h1>
+<p>If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,</p>
+</section>
+
+<section>
+<section id="images" class="title-slide slide level1">
+<h1>Images</h1>
+<p><img src="https://images.unsplash.com/photo-1535448033526-c0e85c9e6968?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" title="Image credit: Photo by Jörg Angeli on Unsplash." alt="Image credit: Photo by Jörg Angeli on Unsplash." width="60%" style="display: block; margin: auto;" /></p>
+<p>Or you can also include a full page image. See next slide.</p>
+</section>
+<section id="section" class="slide level2" data-background-image="https://images.unsplash.com/photo-1535448033526-c0e85c9e6968?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1650&amp;q=80">
+<h2 data-background-image="https://images.unsplash.com/photo-1535448033526-c0e85c9e6968?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1650&amp;q=80"></h2>
+</section></section>
+<section id="math-expressions" class="title-slide slide level1">
+<h1>Math Expressions</h1>
+<p>You can write LaTeX math expressions inside a pair of dollar signs ($…$), e.g. <span class="math inline">\(\alpha+\beta\)</span>. You can use the display style with double dollar signs:</p>
+<p><span class="math display">\[\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i\]</span></p>
+</section>
+
+<section id="feeling-adventurous" class="title-slide slide level1">
+<h1>Feeling adventurous?</h1>
+<p>You can learn more about the options available at the following pages:</p>
+<ul>
+<li><p><a href="https://github.com/rstudio/revealjs" class="uri">https://github.com/rstudio/revealjs</a></p></li>
+<li><p><a href="https://bookdown.org/yihui/rmarkdown/revealjs.html" class="uri">https://bookdown.org/yihui/rmarkdown/revealjs.html</a></p></li>
+<li><p><a href="http://www.jenniferbradham.org/post/reveal_js_markdown/" class="uri">http://www.jenniferbradham.org/post/reveal_js_markdown/</a></p></li>
+<li><p><a href="https://revealjs.com/" class="uri">https://revealjs.com/</a></p></li>
+</ul>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>c0c2b6e88d166025cc4b7d8a408a2505f18bfd6d</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 </section>
     </div>
   </div>
 
-  <script src="presentation_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
-  <script src="presentation_files/reveal.js-3.3.0.1/js/reveal.js"></script>
-
+  <script src="presentation_files/reveal.js-4.1.2/dist/reveal.js"></script>
+  
+  <!-- reveal.js plugins -->
+  
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
         // Display controls in the bottom right corner
         controls: true,
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
         // Display a presentation progress bar
         progress: true,
         // Display the page number of the current slide
         slideNumber: false,
+        // Can be used to limit the contexts in which the slide number appears
+        showSlideNumber: 'all',
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: false,
+          // Use 1 based indexing for # links to match slide number (default is zero
+        // based)
+        hashOneBasedIndex: false,
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
         // Push each slide change to the browser history
+        // Implies `hash: true`
         history: true,
         // Enable keyboard shortcuts for navigation
         keyboard: true,
+  // Disables the default reveal.js slide layout (scaling and centering)
+  // so that you can use custom CSS layout
+  disableLayout: false,
         // Enable the slide overview mode
         overview: true,
         // Vertical centering of slides
@@ -645,39 +422,72 @@ document.getElementsByTagName('head')[0].appendChild(style);
         loop: false,
         // Change the presentation direction to be RTL
         rtl: false,
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
         // Turns fragments on and off globally
         fragments: true,
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
         // Flags if the presentation is running in an embedded mode,
         // i.e. contained within a limited portion of the screen
         embedded: false,
         // Flags if we should show a help overlay when the questionmark
         // key is pressed
         help: true,
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
         // Number of milliseconds between automatically proceeding to the
         // next slide, disabled when set to 0, this value can be overwritten
         // by using a data-autoslide attribute on your slides
         autoSlide: 0,
         // Stop auto-sliding after user input
         autoSlideStoppable: true,
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
         // Enable slide navigation via mouse wheel
         mouseWheel: false,
         // Opens links in an iframe preview overlay
         previewLinks: false,
         // Transition style
-        transition: 'default', // none/fade/slide/convex/concave/zoom
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
         // Transition speed
         transitionSpeed: 'default', // default/fast/slow
         // Transition style for full page slide backgrounds
-        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
         // Number of slides away from the current that are visible
         viewDistance: 3,
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+        // The display mode that will be used to show slides
+        display: 'block',
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
 
 
 
         // Optional reveal.js plugins
-        dependencies: [
+        plugins: [
         ]
       });
+
     </script>
   <!-- dynamically load mathjax for compatibility with self-contained -->
   <script>

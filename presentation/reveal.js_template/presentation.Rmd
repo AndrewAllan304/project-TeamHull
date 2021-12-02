@@ -159,11 +159,12 @@ Weight_Issues %>%
 <<<<<<< HEAD
 - Comparing all 6 risk factors in some way. or comparing the 2 risk factors over different school levels.
 =======
-- Looking for more opportunities to find correlation, regression, other trends
+- Looking for more opportunities to find correlation, regression, other trends.
 >>>>>>> c0c2b6e88d166025cc4b7d8a408a2505f18bfd6d
 
-- Perhaps creating a literal map with a "heat map" with an additional package
-  - Would give us slightly more precise visualization with respect to geography
+- Perhaps creating a literal map with a "heat map" with an additional package.
+
+- Would give us slightly more precise visualization with respect to geography.
 
 # Overall Conclusions
 

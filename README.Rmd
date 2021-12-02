@@ -18,6 +18,20 @@ We imported the 2 data sheets and scanned over the data to see what variables ca
 
 - Map important or interesting trends that we found along the way.
 
+------------
+
+
+if we had more time or the coding ability we would have liked to:
+
+- Comparing common trends between the two datasets (Is geography correlated?.
+
+- Comparing all 6 risk factors in some way. or comparing the 2 risk factors over different school levels.
+
+- Looking for more opportunities to find correlation, regression, other trends.
+
+- Perhaps creating a literal map with a "heat map" with an additional package.
+
+- Would give us slightly more precise visualization with respect to geography
 
 ```{r load-data, echo=FALSE}
 Weight_Issues <- read.csv(here::here("data/Weight Issues.csv"))
