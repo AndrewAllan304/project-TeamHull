@@ -31,7 +31,7 @@ if we had more time or the coding ability we would have liked to:
 
 - Perhaps creating a literal map with a "heat map" with an additional package.
 
-- Would give us slightly more precise visualization with respect to geography
+- Would give us slightly more precise visualization with respect to geography.
 
 ```{r load-data, echo=FALSE}
 Weight_Issues <- read.csv(here::here("data/Weight Issues.csv"))
