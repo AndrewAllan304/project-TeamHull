@@ -1,6 +1,6 @@
-Project title
+Youth Risk Behavior
 ================
-by Team name
+by Team Hull
 
 ## Summary
 
@@ -20,12 +20,22 @@ one school range(Middle School).
 The data sets where created on August 29th 2016 and were last updated
 March 29th 2019. Therefore the data has a good range across 26 years
 period from 1991-2017 so we can visualize and evaluate trends in
-substance abuse and weight issues.
+substance abuse and weight issues. The substance abuse data set is made
+up of 35 columns and 33.4 thousand entries. The weight issues data set
+is made up of 35 variables and 40 thousand entries.
 
 We imported the 2 data sheets and scanned over the data to see what
 variables can be used to produce interesting graphs, what variables are
 useful to us, and how this data proves things that are said media about
-these topics.
+these topics. We came up with our goals as:
+
+-   Discover whether risky behavior such as “substance abuse” and
+    “weight issues” may appear more or less frequently among different
+    categorical variables such as sex, race, etc.
+
+-   Model how risky behavior trends throughout different grades.
+
+-   Map important or interesting trends that we found along the way.
 
 ## Presentation
 
