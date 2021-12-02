@@ -110,6 +110,7 @@ Substance_Summary %>%
   stat_smooth(method = "lm", col = "violet") +
   labs(title = paste("y ≈ ", signif(summary(fit1)$coef[[2]], 4), 
                      "x + ", signif(summary(fit1)$coef[[1]], 4))
+
        )
 ```
 

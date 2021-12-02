@@ -158,7 +158,7 @@ Weight_Issues %>%
 
 # Substance Abuse Issues and Geography
 
-```{r}
+```{r echo=FALSE}
 Substance_Abuse_Edited %>%
   group_by(LocationDesc) %>%
   drop_na(Greater_Risk_Data_Value) %>%
@@ -180,7 +180,7 @@ ylab("Percentage of the Population at Greater Risk")
 
 # Substance Abuse Issues by Race
 
-```{r}
+```{r echo = FALSE}
 Substance_Abuse_Edited %>%
   group_by(Race) %>%
   drop_na(Greater_Risk_Data_Value) %>%
@@ -211,9 +211,6 @@ ylab("Percentage of the Population at Greater Risk")
 - Perhaps creating a literal map with a "heat map" with an additional package.
 
 - Would give us slightly more precise visualization with respect to geography.
-
-# Overall Conclusions
-
 
 # Data Collection
 
