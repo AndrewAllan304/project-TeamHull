@@ -156,6 +156,7 @@ Weight_Issues %>%
 
 # Overall Conclusions
 
+<<<<<<< HEAD
 - Females have greater incidence of "weight issues"
 - Males more likely to be exposed to "substance abuse"
 - Some progress made in both, but still plaguing our generation
@@ -281,3 +282,4 @@ You can learn more about the options available at the following pages:
 - http://www.jenniferbradham.org/post/reveal_js_markdown/
 
 - https://revealjs.com/
+
