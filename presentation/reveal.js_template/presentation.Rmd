@@ -112,7 +112,7 @@ Weight_Issues_Edited %>%
   group_by(LocationDesc) %>%
   drop_na(Greater_Risk_Data_Value) %>%
   summarise(bingo = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
-  ggplot(aes(x = reorder(LocationDesc,-bingo) , y = bingo, fill = LocationDesc)) +
+  ggplot(aes(x = reorder(LocationDesc, -bingo) , y = bingo, fill = LocationDesc)) +
   geom_bar(stat = "identity", position = "dodge") +
 theme(axis.text.x = element_text(angle = 90, size = 5), legend.position = "None") +
 xlab("Location") +
@@ -163,7 +163,7 @@ Substance_Abuse_Edited %>%
   group_by(LocationDesc) %>%
   drop_na(Greater_Risk_Data_Value) %>%
   summarise(bingo = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
-  ggplot(aes(x = LocationDesc , y = bingo, fill = LocationDesc)) +
+  ggplot(aes(x = reorder(LocationDesc, -bingo) , y = bingo, fill = LocationDesc)) +
   geom_bar(stat = "identity", position = "dodge") +
 theme(axis.text.x = element_text(angle = 90, size = 5), legend.position = "None") +
 xlab("Location") +
@@ -185,7 +185,7 @@ Substance_Abuse_Edited %>%
   group_by(Race) %>%
   drop_na(Greater_Risk_Data_Value) %>%
   summarise(bingo = weighted.mean(Greater_Risk_Data_Value, Sample_Size)) %>%
-  ggplot(aes(x = Race , y = bingo, fill = Race)) +
+  ggplot(aes(x = reorder(Race, -bingo) , y = bingo, fill = Race)) +
   geom_bar(stat = "identity", position = "dodge") +
 theme(axis.text.x = element_blank()) +
 xlab("Race") +
