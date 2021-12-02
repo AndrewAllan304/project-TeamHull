@@ -24,16 +24,28 @@ your project.
 
 ## Presentation
 
-Our presentation can be found [here](presentation/presentation.html).
+Our presentation can be found
+<https://f2209927ca3c49c386c7f1f6717e6018.app.rstudio.cloud/file_show?path=%2Fcloud%2Fproject%2Fpresentation%2Freveal.js_template%2Fpresentation.html>\]
 
 ## Data
 
-Include a citation for your data here. See
-<http://libraryguides.vu.edu.au/c.php?g=386501&p=4347840> for guidance
-on proper citation for datasets. If you got your data off the web, make
-sure to note the retrieval date.
+Centers for Disease Control and Prevention 2019, *DASH YRBSS - Weight
+Control (MS), DASH - Youth Risk Behavior Surveillance System (YRBSS):
+Middle School* DASH Public Inquiries, viewed 22 October 2021, data
+file(CSV),
+<https://chronicdata.cdc.gov/Youth-Risk-Behaviors/DASH-YRBSS-Weight-Control-MS-/xg5u-askg>
 
+Centers for Disease Control and Prevention 2019, *DASH YRBSS - Alcohol
+and Other Drug Use (MS), DASH - Youth Risk Behavior Surveillance System
+(YRBSS): Middle School* DASH Public Inquiries, viewed 22 October 2021,
+data file(CSV),
+<https://chronicdata.cdc.gov/Youth-Risk-Behaviors/DASH-YRBSS-Alcohol-and-Other-Drug-Use-MS-/bdg5-rnzz>
 ## References
 
-List any references here. You should, at a minimum, list your data
-source.
+#References
+
+Data Set (Substance Abuse):
+<https://chronicdata.cdc.gov/Youth-Risk-Behaviors/DASH-YRBSS-Alcohol-and-Other-Drug-Use-MS-/bdg5-rnzz>,
+
+Data Set (Weight Issues):
+<https://chronicdata.cdc.gov/Youth-Risk-Behaviors/DASH-YRBSS-Weight-Control-MS-/xg5u-askg>,
