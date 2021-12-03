@@ -237,6 +237,31 @@ Substance_Abuse_Edited %>%
 ![](proposal_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ``` r
+Substance_Summary <- Substance_Abuse_Edited %>%
+  filter(
+    Greater_Risk_Question == "Drank alcohol for the first time before age 11 years"
+  ) %>%
+  drop_na(Greater_Risk_Data_Value) %>%
+  group_by(YEAR) %>%
+  summarise(Percentage_Greater_Risk = weighted.mean(Greater_Risk_Data_Value, Sample_Size))
+
+fit1 <- lm(Percentage_Greater_Risk ~ YEAR, data = Substance_Summary)
+
+Substance_Summary %>%
+  ggplot(aes(x = YEAR, y = Percentage_Greater_Risk)) +
+  geom_point() +
+  stat_smooth(method = "lm", col = "violet") +
+  labs(title = paste("y ≈ ", signif(summary(fit1)$coef[[2]], 4), 
+                     "x + ", signif(summary(fit1)$coef[[1]], 4))
+
+       )
+```
+
+    ## `geom_smooth()` using formula 'y ~ x'
+
+![](proposal_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+
+``` r
 Substance_Abuse_Edited %>%
   group_by(Sex) %>%
   ggplot(aes(x=Grade, y = Pop_at_Grisk, fill=Sex, colour = Sex)) +
@@ -250,7 +275,7 @@ Substance_Abuse_Edited %>%
 
     ## Warning: Removed 22131 rows containing missing values (geom_point).
 
-![](proposal_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](proposal_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 This graph shows the amount of each grade that is represented on this
 list of Substance Abuse related events grouping by Sex. This shows a
@@ -271,7 +296,7 @@ Weight_Issues %>%
   ylab("Percentage of teenagers who have a misconception of overweight")
 ```
 
-![](proposal_files/figure-gfm/unnamed-chunk-9-1.png)<!-- --> This graph
+![](proposal_files/figure-gfm/unnamed-chunk-10-1.png)<!-- --> This graph
 shows the percentage of teenagers having a overweight misconception
 between those who suffered from weight loss. Compared to another type of
 greater risk “Were not trying to lose weight,” this type of risk seems
@@ -300,7 +325,7 @@ Weight_Issues %>%
 
     ## `summarise()` has grouped output by 'Sex'. You can override using the `.groups` argument.
 
-![](proposal_files/figure-gfm/unnamed-chunk-10-1.png)<!-- --> What we
+![](proposal_files/figure-gfm/unnamed-chunk-11-1.png)<!-- --> What we
 can see from this chart is that for a long time, there is no obvious
 sign of easing this problem, and females are more vulnerable.
 
@@ -316,7 +341,7 @@ Weight_Issues %>%
 
     ## Warning: Removed 26846 rows containing missing values (geom_point).
 
-![](proposal_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](proposal_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
 ``` r
 Weight_Issues %>%
@@ -325,7 +350,7 @@ Weight_Issues %>%
   geom_bar()
 ```
 
-![](proposal_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](proposal_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
 This graph shows the amount of each grade represented in the data for
 weight issues and shows there is no great disparity between races on the
@@ -343,7 +368,7 @@ xlab("Location") +
 ylab("Percentage of the Population at Greater Risk")
 ```
 
-![](proposal_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](proposal_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 ``` r
 Substance_Abuse_Edited %>%
@@ -357,7 +382,7 @@ xlab("Location") +
 ylab("Percentage of the Population at Greater Risk")
 ```
 
-![](proposal_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](proposal_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 ``` r
 Substance_Abuse_Edited %>%
@@ -371,7 +396,7 @@ xlab("Race") +
 ylab("Percentage of the Population at Greater Risk")
 ```
 
-![](proposal_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](proposal_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 ``` r
 Weight_Issues_Edited %>%
@@ -382,4 +407,4 @@ Weight_Issues_Edited %>%
 
     ## Warning: Removed 50 row(s) containing missing values (geom_path).
 
-![](proposal_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](proposal_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
