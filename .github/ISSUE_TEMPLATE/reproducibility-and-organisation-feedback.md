@@ -16,7 +16,7 @@ Dear @ids-s1-21/[TEAMNAME] -- Below is the feedback for the reproducibility and 
 
 ### Repository Organisation (_/2 points)
 
-*Does it appear that time and effort went into the planning and implementation of the project? (i.e. files in extra folder)*
+*Are files well named and in sensible locations?*
 
 -
 
